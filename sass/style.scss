@@ -1,20 +1,5 @@
 @use 'abstracts';
+@use 'vendors';
 @use 'base';
-// @use 'components';
-// @use 'layout';
-// @use 'pages';
-// @use 'themes';
-// @use 'vendors';
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: "Poppins";
-    font-weight: 400;
-}
+@use 'components';
+@use 'layout';

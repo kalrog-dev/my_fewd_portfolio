@@ -1,0 +1,36 @@
+// Colors
+$clr-primary: hsl(185, 70%, 28%);
+$clr-neutral-800: hsl(230, 6%, 21%);
+$clr-neutral-300: hsl(0, 0%, 85%);
+$clr-neutral-200: hsl(0, 0%, 96%);
+$clr-neutral-100: hsl(0, 0%, 100%);
+
+/* =================
+Typography
+================= */
+// General
+$ff: 'Poppins', sans-serif;
+$fs-small: 0.75rem;
+$fs-p: 0.875rem;
+$fs-1: 2.5rem;
+$fs-2: 1.875rem;
+$fs-3: 1.25rem;
+$fs-4: 1rem;
+
+// Hero section
+$fs-nav-logo: 1.125rem;
+$fs-nav-link: 1rem;
+$fs-h1-span: $fs-2;
+$fs-btn-hero: 1rem;
+
+// Section
+$fs-btn: $fs-p;
+$fs-tag: $fs-small;
+$fs-certificate-by: $fs-small;
+
+// Card
+$fs-card-label: $fs-p;
+$fs-card-body: $fs-small;
+$fs-card-title: calc($fs-card-body * 2);
+$fs-card-btn: $fs-p;
+$fs-card-tag: $fs-small; 
