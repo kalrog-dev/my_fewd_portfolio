@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.btn {
+    display: inline-block;
+    padding: $spacer calc($spacer * 2.1);
+    margin-bottom: $spacer;
+    color: $clr-primary;
+    background-color: $clr-neutral-100;
+    border: 1px solid $clr-primary;
+    border-radius: $br;
+}
+
+.btn-primary {
+    color: $clr-neutral-100;
+    background-color: $clr-primary;
+    border: 1px solid $clr-primary;
+}
