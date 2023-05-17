@@ -1,12 +1,19 @@
 @use '../abstracts/' as *;
 
 img {
-    width: 90%;
     max-width: 100%;
 }
 
+.project-image {
+    width: 90%;
+}
+
+.certificate-link > img {
+    width: 30px;
+}
+
 @media (min-width: 768px) {
-    img {
+    .project-image {
         width: 40%;
     }
 }
