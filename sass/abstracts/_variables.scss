@@ -1,9 +1,10 @@
 // Colors
 $clr-primary: hsl(185, 70%, 28%);
 $clr-neutral-800: hsl(230, 6%, 21%);
+$clr-neutral-400: hsl(0, 0%, 82%);
 $clr-neutral-300: hsl(0, 0%, 85%);
 $clr-neutral-200: hsl(0, 0%, 96%);
-$clr-neutral-100: hsl(0, 0%, 100%);
+$clr-neutral-100: hsl(0, 0%, 100%); 
 
 /* =================
 Typography
@@ -39,9 +40,17 @@ $fs-card-tag: $fs-small;
 Layout
 ================= */
 $wrapper-width: 90%;
+$wrapper-margin: calc((100% - $wrapper-width) / 2);
+
+$spacer-xs: 0.25em;
+$spacer-sm: 0.5em;
 $spacer: 1em;
+$spacer-md: 1.5em;
+$spacer-lg: 3em;
+$spacer-xl: 4em;
 
 /* =================
 Other
 ================= */
-$br: 5px;
+$shadow: 2px 2px 15px hsla(0, 0, 0, 20%); 
+$br: 6px;

@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+header {
+    padding-block: $spacer;
+}
+
+nav {
+    display: none;
+}

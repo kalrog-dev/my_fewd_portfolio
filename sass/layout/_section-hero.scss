@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.hero-section {
+    margin-top: 4em;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-image {
+    margin-block: $spacer-xl $spacer-md;
+}
+
+.hero-body {
+    order: 1;
+}
+
+h1 {
+    margin-bottom: $spacer;
+}

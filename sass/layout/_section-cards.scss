@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.card-container {
+    display: grid;
+    gap: $spacer;
+    width: $wrapper-width;
+    margin-inline: auto;
+}
+
+.card {
+    width: 70%;
+    margin: auto;
+    padding: $spacer;
+    border-radius: $br;
+    box-shadow: $shadow;
+}

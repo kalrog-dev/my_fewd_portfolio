@@ -1,4 +1,77 @@
-body {
-    font-family: "Poppins";
-    font-weight: 400;
+@use '../abstracts' as *;
+
+:root {
+    font-size: 16px;
 }
+
+body {
+    font-size: $fs-p;
+    font-family: $ff;
+    font-weight: 400;
+    color: $clr-neutral-800;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: $fs-1;
+    font-family: $ff;
+    font-weight: 700;
+    color: $clr-neutral-800;
+    line-height: 1.2;
+
+    span {
+        font-size: $fs-h1-span;
+        font-weight: 700;
+        color: $clr-neutral-400;
+    }
+}
+
+h2 {
+    font-size: $fs-2;
+    font-weight: 700;
+    color: $clr-neutral-400;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: $fs-3;
+    font-weight: 700;
+    color: $clr-neutral-800;
+    line-height: 1.2;
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        right: 1px;
+        top: 50%;
+        height: 0.5em;
+        background-color: $clr-primary;
+        opacity: 25%;
+        border-radius: 2px;
+        z-index: -1;
+    }
+}
+
+h4 {
+    font-size: $fs-4;
+    font-weight: 700;
+    color: $clr-neutral-800;
+}
+
+// Navigation
+.nav-logo {
+    font-size: $fs-nav-logo;
+    font-weight: 600;
+    color: $clr-neutral-800;
+}
+
+// 

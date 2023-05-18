@@ -1,17 +1,56 @@
 @use '../abstracts/' as *;
 
-img {
-    max-width: 100%;
+// General selectors
+h2,
+h3,
+h4 {
+    margin-block: 0;
 }
 
-.project-image {
-    width: 90%;
+h2 {
+    margin-top: $spacer;
+}
+
+h3 {
+    margin-inline: $wrapper-margin;
+    margin-bottom: $spacer;
+}
+
+// Images
+img {
+    max-width: 100%;
 }
 
 .certificate-link > img {
     width: 30px;
 }
 
+// General layout
+.container {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// General styles
+section:not(.hero-section) {
+    padding-block: $spacer-md $spacer-lg;
+}
+
+section:nth-of-type(odd) {
+    background-color: $clr-neutral-100;
+}
+
+section:nth-of-type(even) {
+    background-color: $clr-neutral-200;
+}
+
+// Media queries
 @media (min-width: 768px) {
     .project-image {
         width: 40%;
