@@ -67,6 +67,39 @@ h4 {
     color: $clr-neutral-800;
 }
 
+// Card
+.card-label {
+    font-size: $fs-card-label;
+    font-weight: 500;
+    color: $clr-neutral-600;
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-size: $fs-card-title;
+    font-weight: 700;
+    color: $clr-neutral-800;
+    text-transform: capitalize;
+}
+
+.card-body {
+    font-size: $fs-card-body;
+    font-weight: 400;
+    color: $clr-neutral-800;
+}
+
+.card-btn {
+    font-size: $fs-card-btn;
+    font-weight: 600;
+    color: $clr-neutral-100;
+}
+
+.card-tag {
+    font-size: $fs-card-tag;
+    font-weight: 500;
+    color: $clr-neutral-100;
+}
+
 // Navigation
 .nav-logo {
     font-size: $fs-nav-logo;

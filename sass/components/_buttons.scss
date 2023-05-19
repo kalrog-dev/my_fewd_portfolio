@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
-
-
+// Default buttons
 .btn {
     display: inline-block;
     padding: calc($spacer * 0.75) calc($spacer * 0.75 * 2.1) calc($spacer * 0.75);
@@ -21,14 +20,21 @@
     border: 2px solid $clr-primary;
 }
 
+// Hero section
 .btn-hero {
     padding: $spacer-sm calc($spacer-sm * 2.1);
     font-size: $fs-btn-hero;
     border-radius: $br;
 }
 
+// Showcase section
 .button-group {
     display: grid;
     gap: calc($spacer * 0.75);
     width: max-content;
+}
+
+// Cards section
+.card-btn {
+    padding: calc($spacer * 0.55);
 }

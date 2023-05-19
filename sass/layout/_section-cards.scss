@@ -8,9 +8,61 @@
 }
 
 .card {
-    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    width: 240px;
     margin: auto;
-    padding: $spacer;
     border-radius: $br;
     box-shadow: $shadow;
+
+    &:first-of-type {
+        margin-top: $spacer;
+    }
+
+    .card-label {
+        grid-column: 1 / 2;
+        padding: $spacer-md $spacer-md 0;
+        margin: 0;
+        background-color: $clr-bg-card;
+    }
+}
+
+.card-main-content {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    padding: $spacer-md;
+    background-color: $clr-bg-card;
+
+    .card-title {
+        margin-bottom: $spacer;
+    }
+
+    .card-body {
+        order: 1;
+        margin-block: $spacer-md 3em;
+    }
+}
+
+.card-sidebar {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacer;
+
+    .card-tech-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .card-tag {
+        text-align: center;
+        margin-block: $spacer-sm;
+        padding: 0.2em 0.6em;
+        background-color: $clr-neutral-800;
+        border-radius: 15px;
+    }
 }
