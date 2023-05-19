@@ -16,6 +16,14 @@ h3 {
     margin-bottom: $spacer;
 }
 
+section h3:not(:first-of-type) {
+    margin-top: calc($spacer * 2);
+}
+
+p + p {
+    margin-top: calc($spacer * 1.75);
+}
+
 // Images
 img {
     max-width: 100%;
@@ -29,6 +37,10 @@ img {
 .container {
     width: 90%;
     margin-inline: auto;
+
+    h3 {
+        margin-left: 0;
+    }
 }
 
 .flex-container {

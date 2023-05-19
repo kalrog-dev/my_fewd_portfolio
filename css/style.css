@@ -331,6 +331,14 @@ h3 {
   margin-bottom: 1em;
 }
 
+section h3:not(:first-of-type) {
+  margin-top: 2em;
+}
+
+p + p {
+  margin-top: 1.75em;
+}
+
 img {
   max-width: 100%;
 }
@@ -342,6 +350,9 @@ img {
 .container {
   width: 90%;
   margin-inline: auto;
+}
+.container h3 {
+  margin-left: 0;
 }
 
 .flex-container {
@@ -506,6 +517,20 @@ h4 {
   color: hsl(230, 6%, 21%);
 }
 
+.certificate-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(230, 6%, 21%);
+  line-height: 1.5;
+}
+
+.certificate-by {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: hsl(230, 6%, 21%);
+  line-height: 1.5;
+}
+
 .btn {
   display: inline-block;
   padding: 0.75em 1.575em 0.75em;
@@ -547,6 +572,90 @@ header {
 
 nav {
   display: none;
+}
+
+.about-container {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.about-tech-list {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-auto-flow: column;
+  padding: 0 0 1em;
+  list-style: none;
+}
+.about-tech-list img {
+  width: 20px;
+  margin-right: 0.85em;
+}
+.about-tech-list img.small {
+  transform: scale(0.8);
+}
+
+.about-tech-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.certificate {
+  position: relative;
+  margin-block: 0.75em;
+  padding: 0.5em;
+  padding-left: 1.5em;
+  border-radius: 5px;
+}
+.certificate:nth-of-type(odd) {
+  background-color: hsl(0, 0%, 96%);
+}
+.certificate:nth-of-type(odd)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-color: #c2c2c2;
+  border-radius: 5px 0 0 5px;
+}
+.certificate:nth-of-type(even) {
+  background-color: hsla(185, 70%, 28%, 0.1);
+}
+.certificate:nth-of-type(even)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-color: hsla(185, 70%, 28%, 0.25);
+  border-radius: 5px 0 0 5px;
+}
+.certificate:first-of-type {
+  margin-top: 2.25em;
+}
+.certificate:last-of-type {
+  margin-bottom: 1.5em;
+}
+
+.certificate-container {
+  align-items: flex-start;
+}
+
+.certificate-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.certificate-text .certificate-by {
+  margin: 0;
+}
+
+.certificate-link-icon {
+  transform: scale(0.9);
 }
 
 .card-container {
@@ -595,7 +704,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 1.5em 1em 1em;
 }
 .card-sidebar .card-tech-list {
   margin: 0;

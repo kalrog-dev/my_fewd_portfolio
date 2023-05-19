@@ -107,4 +107,17 @@ h4 {
     color: $clr-neutral-800;
 }
 
-// 
+// Certificate
+.certificate-title {
+    font-size: $fs-p;
+    font-weight: 600;
+    color: $clr-neutral-800;
+    line-height: 1.5;
+}
+
+.certificate-by {
+    font-size: $fs-certificate-by;
+    font-weight: 300;
+    color: $clr-neutral-800;
+    line-height: 1.5;
+}
