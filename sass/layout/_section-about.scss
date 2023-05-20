@@ -49,13 +49,13 @@
             left: 0;
             width: 10px;
             height: 100%;
-            background-color: darken($clr-neutral-200, 20%);
+            background-color: rgba($clr-neutral-800, 0.25);
             border-radius: 5px 0 0 5px;
         }
     }
 
     &:nth-of-type(even) {
-        background-color: $clr-bg-certificate;
+        background-color: rgba($clr-primary, 0.1);
 
         &::before {
             content: '';
@@ -64,7 +64,7 @@
             left: 0;
             width: 10px;
             height: 100%;
-            background-color: $clr-bg-certificate-before;
+            background-color: rgba($clr-primary, 0.25);
             border-radius: 5px 0 0 5px;
         }
     }
@@ -92,29 +92,35 @@
     }
 }
 
+.certificate-link {
+    display: flex;
+    position: relative;
+    top: -2px;
+}
+
 .certificate-link-icon {
     transform: scale(0.9);
 }
 
 // Media queries
-@media (min-width: 575px) {
+@include media(sm) {
     .about-tech-list {   
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (min-width: 1200px) {
+@include media(xl) {
     .about-container {
         flex-direction: row;
         gap: $spacer-xl;
-    }
 
-    .col-one {
-        flex: 4;
-    }
-
-    .col-two {
-        flex: 3;
+        .col-one {
+            flex: 4;
+        }
+    
+        .col-two {
+            flex: 3;
+        }
     }
 }

@@ -23,7 +23,7 @@
         grid-column: 1 / 2;
         padding: $spacer-md $spacer-md 0;
         margin: 0;
-        background-color: $clr-bg-card;
+        background-color: rgba($clr-primary, 0.05);
     }
 }
 
@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: column;
     padding: $spacer-md;
-    background-color: $clr-bg-card;
+    background-color: rgba($clr-primary, 0.05);
 
     .card-title {
         margin-bottom: $spacer;
@@ -59,10 +59,22 @@
     }
 
     .card-tag {
+        position: relative;
         text-align: center;
         margin-block: $spacer-sm;
         padding: 0.2em 0.6em;
         background-color: $clr-neutral-800;
         border-radius: 15px;
+
+        &:first-of-type::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -$spacer - 0.3em;
+            width: 3px;
+            background-color: $clr-primary;
+            border-radius: 100vw;
+        }
     }
 }

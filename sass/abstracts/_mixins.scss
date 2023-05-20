@@ -1,0 +1,8 @@
+@use './variables' as *;
+
+// Media queries
+@mixin media($size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+        @content
+    }
+}

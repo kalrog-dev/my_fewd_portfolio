@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.contact-container {
+    display: grid;
+
+    .col:not(:last-of-type) {
+        margin-bottom: $spacer-lg;
+    }
+}
+
+.form-group {
+    margin-bottom: $spacer;
+}
+
+.form-label,
+.contact-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: $spacer-xs;
+}
+
+.contact-icon {
+    width: 23px;
+    height: 23px;
+
+    path {
+        fill: $clr-primary;
+    }
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: $spacer-sm;
+    color: $clr-neutral-800;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+}
+
+textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+// Alignment fix
+label[for="name"] {
+    margin-top: 3px;
+}
+
+label[for="email"] {
+    margin-top: 2px;
+}
+
+label[for="message"] {
+    margin-top: -1px;
+}
+
+.contact-info p {
+    margin-block: 2px 0;
+}

@@ -61,10 +61,3 @@ section:nth-of-type(odd) {
 section:nth-of-type(even) {
     background-color: $clr-neutral-200;
 }
-
-// Media queries
-@media (min-width: 768px) {
-    .project-image {
-        width: 40%;
-    }
-}

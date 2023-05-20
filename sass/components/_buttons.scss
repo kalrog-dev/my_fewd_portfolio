@@ -28,6 +28,17 @@
 }
 
 // Showcase section
+.project-btn.btn-primary {
+    position: relative;
+
+    &::before {
+        content: url('../../assets/img/arrow.svg');
+        position: absolute;
+        top: -100%;
+        left: 110%;
+        pointer-events: none;
+    }
+}
 .button-group {
     display: grid;
     gap: calc($spacer * 0.75);
@@ -37,4 +48,11 @@
 // Cards section
 .card-btn {
     padding: calc($spacer * 0.55);
+}
+
+// Contact section
+.form-btn {
+    padding: calc($spacer-sm * 1.25) calc($spacer-sm * 3);
+    border-radius: 8px;
+    float: right;
 }

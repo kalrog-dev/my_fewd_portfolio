@@ -10,7 +10,7 @@
 }
 
 .project-content-group {
-    margin-block: $spacer $spacer-lg;
+    margin-block: $spacer $spacer-xl;
 }
 
 .project-tech-list {
@@ -18,16 +18,29 @@
     justify-content: start;
     gap: $spacer;
     padding-inline: 0;
+    margin-bottom: $spacer-md;
     list-style: none;
 
     li {
+        position: relative;
         padding: 0.25em 0.6em;
         text-align: center;
         font-size: $fs-tag;
         color: $clr-neutral-100;
         background-color: $clr-neutral-800;
-        min-width: 50px;
-        border-radius: 15px;
+        min-width: 48px;
+        border-radius: 10px;
+
+        &:first-of-type::after {
+            content: '';
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            position: absolute;
+            height: 2px;
+            background-color: $clr-primary;
+            border-radius: 100vw;
+        }
     }
 }
 
@@ -35,7 +48,7 @@
     text-align: left;
 }
 
-.image-container {
+.project-image-container {
     order: -1;
 }
 
@@ -44,4 +57,24 @@
     height: 86%;
     object-fit: cover;
     border-radius: 0 10px 10px 0;
+}
+
+// Media queries
+@include media(lg) {
+    .project-container {
+        flex-direction: row;
+    }
+
+    .project-info {
+        flex: 3;
+        margin-left: $wrapper-margin;
+    }
+
+    .project-image-container {
+        flex: 4;
+
+        .project-image {
+            width: 100%;
+        }
+    }
 }
