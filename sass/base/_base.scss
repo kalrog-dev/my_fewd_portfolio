@@ -1,6 +1,10 @@
 @use '../abstracts/' as *;
 
 // General selectors
+:root {
+    scroll-behavior: smooth;
+}
+
 h2,
 h3,
 h4 {
@@ -60,4 +64,11 @@ section:nth-of-type(odd) {
 
 section:nth-of-type(even) {
     background-color: $clr-neutral-200;
+}
+
+// General media queries
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        scroll-behavior: auto;
+    }
 }

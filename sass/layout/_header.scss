@@ -4,6 +4,35 @@ header {
     padding-block: $spacer;
 }
 
-nav {
-    display: none;
+.nav-main {
+    position: absolute;
+    inset: auto 0;
+    margin-top: calc($spacer);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition-property: clip-path;
+    transition-duration: 0.35s;
+    background-color: $clr-neutral-200;
+
+    &.show {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    .nav-list {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .nav-item {
+        text-align: center;    
+
+        &:hover {
+            background-color: rgba($clr-neutral-300, 0.40);
+        }
+    }
+
+    .nav-link {
+        display: block;
+        padding: $spacer;
+    }
 }

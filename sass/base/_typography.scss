@@ -67,6 +67,14 @@ h4 {
     color: $clr-neutral-800;
 }
 
+// Navigation
+.nav-link {
+    font-size: $fs-p;
+    font-weight: 500;
+    color: $clr-neutral-800;
+    text-transform: capitalize;
+}
+
 // Card
 .card-label {
     font-size: $fs-card-label;

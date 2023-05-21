@@ -316,6 +316,10 @@ template {
   display: none;
 }
 
+:root {
+  scroll-behavior: smooth;
+}
+
 h2,
 h3,
 h4 {
@@ -373,6 +377,11 @@ section:nth-of-type(even) {
   background-color: hsl(0, 0%, 96%);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -472,6 +481,13 @@ h4 {
   font-size: 1rem;
   font-weight: 700;
   color: hsl(230, 6%, 21%);
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(230, 6%, 21%);
+  text-transform: capitalize;
 }
 
 .card-label {
@@ -582,8 +598,32 @@ header {
   padding-block: 1em;
 }
 
-nav {
-  display: none;
+.nav-main {
+  position: absolute;
+  inset: auto 0;
+  margin-top: 1em;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition-property: clip-path;
+  transition-duration: 0.35s;
+  background-color: hsl(0, 0%, 96%);
+}
+.nav-main.show {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.nav-main .nav-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.nav-main .nav-item {
+  text-align: center;
+}
+.nav-main .nav-item:hover {
+  background-color: rgba(217, 217, 217, 0.4);
+}
+.nav-main .nav-link {
+  display: block;
+  padding: 1em;
 }
 
 .about-container {
@@ -670,7 +710,7 @@ nav {
 .certificate-link {
   display: flex;
   position: relative;
-  top: -2px;
+  top: -3px;
 }
 
 .certificate-link-icon {

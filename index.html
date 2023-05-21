@@ -6,19 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Michal Veselka</title>
         <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/app.js" defer></script>
     </head>
     <body>
         <header>
             <div class="container">
                 <div class="flex-container">
                     <span class="nav-logo">Michal Veselka</span>
-                    <img src="./assets/img/icons/menu/hamburger.svg" alt="Menu icon">
+                    <img class="nav-menu-icon" src="./assets/img/icons/menu/hamburger.svg" alt="Menu icon">
                 </div>
-                <nav>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <nav class="nav-main">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
                 </nav>
             </div>
         </header>
@@ -50,7 +53,7 @@
                                 <li>SCSS</li>
                             </ul>
                             <p class="project-body">
-                                I implemented ChartJS to display a line, bar and donut chart. A navigation is used to switch between several line charts. There is an autocomplete search input field. Local storage is used to save settings. Users can close an alert banner and display notifications. The project was created with the mobile-first approach and includes a CSS grid.
+                                I used ChartJS to display various charts and included a line chart navigation. There is an autocomplete search field. Local storage is used to save settings. Users can close alert banners and display notifications. Made with mobile-first approach and a CSS grid.
                             </p>
                         </div>
                         <div class="button-group">
