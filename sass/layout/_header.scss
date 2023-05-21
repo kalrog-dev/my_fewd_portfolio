@@ -10,7 +10,7 @@ header {
     margin-top: calc($spacer);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition-property: clip-path;
-    transition-duration: 0.35s;
+    transition-duration: $menu-anim-spd;
     background-color: $clr-neutral-200;
 
     &.show {
@@ -34,5 +34,46 @@ header {
     .nav-link {
         display: block;
         padding: $spacer;
+    }
+}
+
+// Navigation menu button
+.nav-menu-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    $anim-spd: calc($menu-anim-spd / 2);
+
+    .line {
+        fill: $clr-neutral-800;
+        transform-origin: center;
+        transition:
+            transform $anim-spd $menu-anim-timing-func,
+            opacity 0s $anim-spd,
+            y $anim-spd $menu-anim-timing-func $anim-spd;  
+    }
+
+    // &:hover
+    &.close {
+        .line {
+            transition: 
+                y $anim-spd $menu-anim-timing-func,
+                opacity 0s $anim-spd,
+                transform $anim-spd $menu-anim-timing-func $anim-spd;
+        }
+
+        .line.one {
+            y: 24px;
+            transform: rotate(45deg);
+        }
+
+        .line.two {
+            opacity: 0;
+        }
+
+        .line.three {
+            y: 24px;
+            transform: rotate(-45deg);
+        }
     }
 }
