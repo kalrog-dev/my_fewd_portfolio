@@ -5,8 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Michal Veselka</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
         <link rel="stylesheet" href="./css/style.css" />
+        
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
         <script src="./js/app.js" defer></script>
+        <script src="./js/carousel.js" defer></script>
     </head>
     <body>
         <header>
@@ -18,17 +25,17 @@
                             <rect
                                 class="line one"
                                 width="60" height="8"
-                                x="6" y="8" rx="5">
+                                x="6" y="8" rx="4">
                             </rect>
                             <rect
                                 class="line two"
                                 width="60" height="8"
-                                x="6" y="24" rx="5">
+                                x="6" y="24" rx="4">
                             </rect>
                             <rect
                                 class="line three"
                                 width="60" height="8"
-                                x="6" y="40" rx="5">
+                                x="6" y="40" rx="4">
                             </rect>
                         </svg>
                     </button>
@@ -60,7 +67,7 @@
             </section>
             <section id="projects">
                 <h2>Projects</h2>
-                <h3>Web App Dashboard</h3>
+                <h3 class="subheading">Web App Dashboard</h3>
                 <div class="project-container">
                     <div class="project-info">
                         <div class="project-content-group">
@@ -102,7 +109,7 @@
                 </div>
             </section>
             <section id="projects">
-                <h3>Easybank</h3>
+                <h3 class="subheading">Easybank</h3>
                 <div class="project-container">
                     <div class="project-info">
                         <p style="margin: 0;">Coming soon.</p>
@@ -111,33 +118,173 @@
             </section>
             <section>
                 <h2>Techdegree</h2>
-                <h3>Student Projects</h3>
+                <h3 class="subheading">Student Projects</h3>
                 <div class="card-container">
-                    <div class="card">
-                        <p class="card-label">Project 1</p>
-                        <div class="card-main-content">
-                            <h4 class="card-title">Lorem, ipsum.</h4>
-                            <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
-                            <a class="card-btn btn btn-primary">View website</a>
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <p class="card-label">Project 1</p>
+                                    <div class="card-main-content">
+                                        <h4 class="card-title">Lorem, ipsum.</h4>
+                                        <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati optio expedita nostrum libero maxime?</p>
+                                        <a class="card-btn btn btn-primary">View website</a>
+                                    </div>
+                                    <div class="card-sidebar">
+                                        <ul class="card-tech-list">
+                                            <li class="card-tag">HTML</li>
+                                            <li class="card-tag">CSS</li>
+                                            <li class="card-tag">JS</li>
+                                        </ul>
+                                        <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-sidebar">
-                            <ul class="card-tech-list">
-                                <li class="card-tag">HTML</li>
-                                <li class="card-tag">CSS</li>
-                                <li class="card-tag">JS</li>
-                            </ul>
-                            <svg class="card-github" width="30" height="31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.034 24.061c0 .121-.139.218-.314.218-.2.018-.339-.078-.339-.218 0-.12.14-.218.315-.218.181-.018.338.08.338.218Zm-1.88-.272c-.043.121.078.26.26.296.157.061.338 0 .374-.12.037-.122-.078-.26-.26-.315-.157-.043-.332.018-.375.139Zm2.673-.103c-.176.042-.297.157-.279.297.018.12.176.2.357.157.176-.042.297-.157.279-.279-.019-.114-.182-.193-.357-.175ZM14.807.484C6.416.484 0 6.86 0 15.258c0 6.715 4.222 12.46 10.252 14.483.774.139 1.046-.34 1.046-.733 0-.375-.018-2.446-.018-3.718 0 0-4.234.909-5.123-1.804 0 0-.69-1.762-1.681-2.216 0 0-1.385-.95.097-.932 0 0 1.506.12 2.334 1.562 1.325 2.337 3.545 1.665 4.41 1.265.139-.968.532-1.64.967-2.04-3.38-.376-6.792-.866-6.792-6.69 0-1.666.46-2.501 1.427-3.567-.157-.393-.671-2.016.158-4.111 1.264-.394 4.173 1.635 4.173 1.635 1.21-.34 2.51-.515 3.798-.515 1.289 0 2.59.176 3.799.515 0 0 2.909-2.035 4.173-1.635.829 2.101.315 3.718.157 4.111.968 1.072 1.56 1.907 1.56 3.566 0 5.843-3.562 6.31-6.943 6.69.557.48 1.029 1.387 1.029 2.81 0 2.04-.019 4.565-.019 5.062 0 .394.279.872 1.047.733C25.899 27.718 30 21.973 30 15.258 30 6.86 23.196.484 14.806.484ZM5.878 21.367c-.079.06-.06.2.042.315.097.097.236.14.315.06.079-.06.06-.2-.042-.315-.097-.096-.236-.139-.315-.06Zm-.653-.49c-.043.078.018.175.139.236.097.06.218.042.26-.043.042-.078-.018-.175-.14-.236-.12-.036-.217-.018-.26.043Zm1.96 2.155c-.097.079-.061.26.078.375.14.14.315.158.393.061.079-.079.043-.26-.078-.375-.133-.14-.315-.158-.394-.061Zm-.69-.89c-.097.06-.097.218 0 .357.097.14.26.2.339.14.096-.08.096-.237 0-.376-.085-.14-.242-.2-.339-.121Z" fill="#323338"/></svg>
-                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </section>
             <section id="about">
                 <h2>About Me</h2>
                 <div class="about-container flex-container container">
                     <div class="col col-one">
-                        <h3>My Experience</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat accusantium voluptatem odio error blanditiis accusamus amet itaque, nam ex temporibus.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates tempore repudiandae sunt odio eveniet. Voluptatibus cupiditate modi accusantium aut exercitationem excepturi.</p>
+                        <h3 class="subheading">My Experience</h3>
+                        <p>My initial interest in programming has been motivated by creating games. I started to code in Game Maker Language and learned basics of programming in C before starting to focus on web development.</p>
+                        <p>I have completed several web development courses, most of which were quite extensive, in order to gain a strong foundation.</p>
+                        <p>My hobbies include Bridge - a logical card game, and learning languages. I speak Czech, English, German and a bit of Korean.</p>
                         <h3>Technical Skills</h3>
                         <ul class="about-tech-list">
                             <li class="about-tech-item">
@@ -200,7 +347,7 @@
                                     <p class="certificate-by">by Treehouse &#40;in progress...&#41;</p>
                                 </div>
                                 <a class="certificate-link" href="#" target="_blank" rel="noopener noreferrer">
-                                    <svg class="certificate-link-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg class="certificate-link-icon hide" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </a>
                             </div> 
                         </div>
@@ -210,7 +357,7 @@
                                     <strong class="certificate-title">Web Application Programmer</strong>
                                     <p class="certificate-by">by Primakurzy</p>
                                 </div>
-                                <a class="certificate-link" href="#" target="_blank" rel="noopener noreferrer">
+                                <a class="certificate-link" href="./assets/prg-certificate.pdf" target="_blank" rel="noopener noreferrer">
                                     <svg class="certificate-link-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </a>
                             </div> 
@@ -221,7 +368,7 @@
                                     <strong class="certificate-title">JS Algorithms &amp; Data Structures</strong>
                                     <p class="certificate-by">by freeCodeCamp</p>
                                 </div>
-                                <a class="certificate-link" href="#" target="_blank" rel="noopener noreferrer">
+                                <a class="certificate-link" href="https://www.freecodecamp.org/certification/kalrog/javascript-algorithms-and-data-structures" target="_blank" rel="noopener noreferrer">
                                     <svg class="certificate-link-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </a>
                             </div> 
@@ -232,7 +379,7 @@
                                     <strong class="certificate-title">Responsive Web Design</strong>
                                     <p class="certificate-by">by freeCodeCamp</p>
                                 </div>
-                                <a class="certificate-link" href="#" target="_blank" rel="noopener noreferrer">
+                                <a class="certificate-link" href="https://www.freecodecamp.org/certification/kalrog/responsive-web-design" target="_blank" rel="noopener noreferrer">
                                     <svg class="certificate-link-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </a>
                             </div>
@@ -243,7 +390,7 @@
                                     <strong class="certificate-title">Learn Responsive Web Design</strong>
                                     <p class="certificate-by">by Scrimba</p>
                                 </div>
-                                <a class="certificate-link" href="#" target="_blank" rel="noopener noreferrer">
+                                <a class="certificate-link" href="https://scrimba.com/certificate/uv96NyUP/gresponsive" target="_blank" rel="noopener noreferrer">
                                     <svg class="certificate-link-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </a>
                             </div> 
@@ -253,7 +400,7 @@
             </section>
             <section id="contact">
                 <h2>Contact</h2>
-                <h3>Message Me</h3>
+                <h3 class="subheading">Message Me</h3>
                 <div class="contact-container container">
                     <div class="col">
                         <form id="contact-form" action="#" method="post">

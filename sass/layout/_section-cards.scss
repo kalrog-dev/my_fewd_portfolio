@@ -2,6 +2,7 @@
 
 .card-container {
     display: grid;
+    position: relative;
     gap: $spacer;
     width: $wrapper-width;
     margin-inline: auto;
@@ -76,5 +77,101 @@
             background-color: $clr-primary;
             border-radius: 100vw;
         }
+    }
+}
+
+// Swiper
+.swiper {
+    width: 90%;
+    height: 460px;
+}
+
+.swiper-button-prev {
+    top: 205px;
+    left: calc(50% - 156px);
+}
+
+.swiper-button-next {
+    top: 205px;
+    right: calc(50% - 156px);
+}
+
+@media (min-width: 360px) {
+    .swiper {
+        width: 270px;
+    }
+
+    .swiper-button-prev {
+        left: calc(50% - 166px);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - 166px);
+    }
+}
+
+@media (min-width: 440px) {
+    .swiper-button-prev {
+        left: calc(50% - 200px);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - 200px);
+    }
+}
+
+@include media(sm) {
+    .swiper {
+        width: 300px;
+    }
+
+    .swiper-button-prev {
+        left: calc(50% - 200px);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - 200px);
+    }
+}
+
+@include media(lg) {
+    .swiper {
+        width: 570px;
+    }
+
+    .swiper-button-prev {
+        left: calc(50% - 380px);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - 380px);
+    }
+}
+
+@include media(xl) {
+    .swiper {
+        width: 900px;
+    }
+
+    .swiper-button-prev {
+        left: calc(50% - 500px);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - 500px);
+    }
+}
+
+@include media(xxl) {
+    .swiper {
+        width: 1200px;
+    }
+
+    .swiper-button-prev {
+        left: calc(50% - 650px);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - 650px);
     }
 }

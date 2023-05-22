@@ -36,6 +36,10 @@ textarea {
     color: $clr-neutral-800;
     border: 1px solid #e1e1e1;
     border-radius: 2px;
+
+    &:focus {
+        outline: 2px solid $clr-primary;
+    }
 }
 
 textarea {
@@ -43,7 +47,7 @@ textarea {
     min-height: 100px;
 }
 
-// Alignment fix
+// Font alignment fix
 label[for="name"] {
     margin-top: 3px;
 }

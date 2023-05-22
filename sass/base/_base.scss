@@ -20,8 +20,8 @@ h3 {
     margin-bottom: $spacer;
 }
 
-section h3:not(:first-of-type) {
-    margin-top: calc($spacer * 2);
+h3:not(.subheading) {
+    margin-top: calc($spacer * 2.5);
 }
 
 p + p {
@@ -51,6 +51,10 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.hide {
+    display: none;
 }
 
 // General styles
