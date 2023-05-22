@@ -15,6 +15,10 @@
     margin: auto;
     border-radius: $br;
     box-shadow: $shadow;
+    // Prevent text selection
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 
     &:first-of-type {
         margin-top: $spacer;
@@ -78,22 +82,34 @@
             border-radius: 100vw;
         }
     }
+
+    .card-github-link {
+        height: 31px;
+        border-radius: 50%;
+    }
 }
 
 // Swiper
 .swiper {
     width: 90%;
-    height: 460px;
+    height: 468px;
 }
 
 .swiper-button-prev {
+    color: $clr-neutral-800;
     top: 205px;
     left: calc(50% - 156px);
 }
 
 .swiper-button-next {
+    color: $clr-neutral-800;
     top: 205px;
     right: calc(50% - 156px);
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    background-color: $clr-primary;
 }
 
 @media (min-width: 360px) {
@@ -123,6 +139,7 @@
 @include media(sm) {
     .swiper {
         width: 300px;
+        height: 470px;
     }
 
     .swiper-button-prev {
@@ -137,6 +154,7 @@
 @include media(lg) {
     .swiper {
         width: 570px;
+        height: 486px;
     }
 
     .swiper-button-prev {
@@ -151,6 +169,7 @@
 @include media(xl) {
     .swiper {
         width: 900px;
+        height: 496px;
     }
 
     .swiper-button-prev {
@@ -165,6 +184,7 @@
 @include media(xxl) {
     .swiper {
         width: 1200px;
+        height: 500px;
     }
 
     .swiper-button-prev {
