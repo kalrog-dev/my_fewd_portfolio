@@ -19,10 +19,6 @@
         width: 20px;
         margin-right: calc($spacer * 0.85);
     }
-
-    img.small {
-        transform: scale(0.8);
-    }
 }
 
 .about-tech-item {
@@ -39,6 +35,10 @@
     padding: $spacer-sm;
     padding-left: 1.5em;
     border-radius: 5px;
+
+    &.unfinished {
+        @extend %unfinished;
+    }
 
     &:nth-of-type(odd) {
         background-color: $clr-neutral-200;
@@ -122,6 +122,20 @@
     
         .col-two {
             flex: 3;
+
+            h3:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+
+    
+}
+
+@include media(xxl) {
+    .about-tech-list {   
+        img {
+            width: 30px;
         }
     }
 }

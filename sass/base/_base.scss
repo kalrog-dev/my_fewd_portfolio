@@ -37,9 +37,25 @@ img {
     width: 30px;
 }
 
+.size-lg {
+    transform: scale(1.1);
+}
+
+.size-sm {
+    transform: scale(0.9);
+}
+
+.size-xs {
+    transform: scale(0.8);
+}
+
+.size-xxs {
+    transform: scale(0.7);
+}
+
 // General layout
 .container {
-    width: 90%;
+    width: $wrapper-width;
     margin-inline: auto;
 
     h3 {
@@ -51,10 +67,6 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.hide {
-    display: none;
 }
 
 // General styles
@@ -74,5 +86,19 @@ section:nth-of-type(even) {
 @media (prefers-reduced-motion: reduce) {
     :root {
         scroll-behavior: auto;
+    }
+}
+
+@media (min-width: 1600px) {
+    h2 {
+        margin-left: calc($wrapper-margin-xxl / 2);
+    }
+
+    h3 {
+        margin-inline: $wrapper-margin-xxl;
+    }
+
+    .container {
+        width: $wrapper-width-xxl;
     }
 }

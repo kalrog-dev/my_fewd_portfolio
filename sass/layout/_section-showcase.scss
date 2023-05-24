@@ -25,7 +25,6 @@
         position: relative;
         padding: 0.25em 0.6em;
         text-align: center;
-        font-size: $fs-tag;
         color: $clr-neutral-100;
         background-color: $clr-neutral-800;
         min-width: 48px;
@@ -76,5 +75,15 @@
         .project-image {
             width: 100%;
         }
+    }
+}
+
+@media (min-width: 1600px) {
+    .project-info {
+        margin-inline: $wrapper-margin-xxl;
+    }
+
+    .project-image {
+        width: calc(100% - $wrapper-margin-xxl);
     }
 }

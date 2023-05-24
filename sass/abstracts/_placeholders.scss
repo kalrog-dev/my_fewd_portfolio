@@ -1,0 +1,15 @@
+@use './variables' as *;
+
+// For certificates which are still being worked on
+%unfinished {
+    opacity: 0.70;
+
+    .certificate-by::after {
+        content: ' (in progress...)';
+        color: $clr-primary;
+    }
+
+    .certificate-link-icon {
+        display: none;
+    }
+}

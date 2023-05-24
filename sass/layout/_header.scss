@@ -1,13 +1,18 @@
 @use '../abstracts' as *;
 
 header {
+    position: absolute;
+    width: 100%;
     padding-block: $spacer;
+}
+
+.nav-logo {
+    padding-block: 0.2em;
 }
 
 .nav-main {
     position: absolute;
-    inset: auto 0;
-    margin-top: calc($spacer);
+    inset: 100% 0 auto;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition-property: clip-path;
     transition-duration: $menu-anim-spd;
@@ -74,6 +79,32 @@ header {
         .line.three {
             y: 24px;
             transform: rotate(-45deg);
+        }
+    }
+}
+
+@include media(lg) {
+    .nav-menu-btn {
+        display: none;
+    }
+
+    .nav-main {
+        position: static;
+        clip-path: none;
+        background-color: $clr-neutral-100;
+
+        .nav-list {
+            display: flex;
+        }
+    
+        .nav-item {
+            &:hover {
+                background-color: $clr-neutral-100;
+            }
+        }
+
+        .nav-link {
+            padding: $spacer-sm $spacer;
         }
     }
 }

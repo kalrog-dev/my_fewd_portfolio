@@ -5,7 +5,7 @@
 }
 
 body {
-    font-size: $fs-p;
+    font-size: map-get($fs-p, xs);
     font-family: $ff;
     font-weight: 400;
     color: $clr-neutral-800;
@@ -18,28 +18,28 @@ a {
 }
 
 h1 {
-    font-size: $fs-1;
+    font-size: map-get($fs-1, xs);
     font-family: $ff;
     font-weight: 700;
     color: $clr-neutral-800;
     line-height: 1.2;
 
     span {
-        font-size: $fs-h1-span;
+        font-size: map-get($fs-h1-span, xs);
         font-weight: 700;
         color: $clr-neutral-400;
     }
 }
 
 h2 {
-    font-size: $fs-2;
+    font-size: map-get($fs-2, xs);
     font-weight: 700;
     color: $clr-neutral-400;
     line-height: 1.2;
 }
 
 h3 {
-    font-size: $fs-3;
+    font-size: map-get($fs-3, xs);
     font-weight: 700;
     color: $clr-neutral-800;
     line-height: 1.2;
@@ -62,17 +62,39 @@ h3 {
 }
 
 h4 {
-    font-size: $fs-4;
+    font-size: map-get($fs-4, xs);
     font-weight: 700;
     color: $clr-neutral-800;
 }
 
 // Navigation
+.nav-logo {
+    font-size: map-get($fs-nav-logo, xs);
+    font-weight: 600;
+    color: $clr-neutral-800;
+}
+
 .nav-link {
-    font-size: $fs-p;
+    font-size: map-get($fs-p, xs);
     font-weight: 500;
     color: $clr-neutral-800;
     text-transform: capitalize;
+}
+
+// Buttons
+.project-btn {
+    font-size: map-get($fs-btn, xs);
+}
+
+.btn-hero {
+    font-size: map-get($fs-btn-hero, xs);
+}
+
+// Showcase
+.project-tech-list {
+    li {
+        font-size: map-get($fs-tag, xs);
+    }
 }
 
 // Card
@@ -108,24 +130,82 @@ h4 {
     color: $clr-neutral-100;
 }
 
-// Navigation
-.nav-logo {
-    font-size: $fs-nav-logo;
-    font-weight: 600;
-    color: $clr-neutral-800;
-}
-
 // Certificate
 .certificate-title {
-    font-size: $fs-p;
+    font-size: map-get($fs-p, xs);
     font-weight: 600;
     color: $clr-neutral-800;
     line-height: 1.5;
 }
 
 .certificate-by {
-    font-size: $fs-certificate-by;
+    font-size: map-get($fs-certificate-by, xs);
     font-weight: 300;
     color: $clr-neutral-800;
     line-height: 1.5;
+}
+
+
+@include media(xxl) {
+    body {
+        font-size: map-get($fs-p, xxl);
+    }
+
+    .card {
+        font-size: 0.875rem;
+    }
+
+    h1 {
+        font-size: map-get($fs-1, xxl);
+
+        span {
+            font-size: map-get($fs-h1-span, xxl);
+        }
+    }
+
+    h2 {
+        font-size: map-get($fs-2, xxl);
+    }
+
+    h3 {
+        font-size: map-get($fs-3, xxl);
+        
+        &::before {
+            border-radius: 5px;
+        }
+    }
+
+    h4 {
+        font-size: map-get($fs-4, xxl);
+    }
+
+    .nav-logo {
+        font-size: map-get($fs-nav-logo, xxl);
+    }
+
+    .nav-link {
+        font-size: map-get($fs-p, xxl);
+    }
+
+    .btn-hero {
+        font-size: map-get($fs-btn-hero, xxl);
+    }
+
+    .project-btn {
+        font-size: map-get($fs-btn, xxl);
+    }
+
+    .project-tech-list {
+        li {
+            font-size: map-get($fs-tag, xxl);
+        }
+    }
+
+    .certificate-title {
+        font-size: map-get($fs-p, xxl);
+    }
+
+    .certificate-by {
+        font-size: map-get($fs-certificate-by, xxl);
+    }
 }

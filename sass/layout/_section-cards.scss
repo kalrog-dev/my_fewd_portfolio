@@ -89,109 +89,89 @@
     }
 }
 
-// Swiper
+@media (min-width: 1600px) {
+    .card-container {
+        width: $wrapper-width-xxl;
+    }
+}
+
+/* =================
+Swiper
+================= */
 .swiper {
     width: 90%;
     height: 468px;
 }
 
+.swiper-slide {
+    cursor: grab;
+}
+
 .swiper-button-prev {
-    color: $clr-neutral-800;
+    color: $clr-neutral-600;
     top: 205px;
     left: calc(50% - 156px);
 }
 
 .swiper-button-next {
-    color: $clr-neutral-800;
+    color: $clr-neutral-600;
     top: 205px;
     right: calc(50% - 156px);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 30px;
+}
+
+.swiper-pagination {
+    pointer-events: none;
 }
 
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
     background-color: $clr-primary;
+    width: 15px;
+    height: 15px;
+}
+
+.swiper-horizontal > 
+    .swiper-pagination-bullets .swiper-pagination-bullet, 
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 3px;
 }
 
 @media (min-width: 360px) {
-    .swiper {
-        width: 270px;
-    }
-
-    .swiper-button-prev {
-        left: calc(50% - 166px);
-    }
-    
-    .swiper-button-next {
-        right: calc(50% - 166px);
-    }
+    // Set swiper width, height and arrow X-offset from the center
+    @include swiper-set-size(270px, 468px, 166px);
 }
 
 @media (min-width: 440px) {
-    .swiper-button-prev {
-        left: calc(50% - 200px);
-    }
-    
-    .swiper-button-next {
-        right: calc(50% - 200px);
+    @include swiper-set-size(270px, 468px, 200px);
+
+    // Increase the prev and next arrow size
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 50px;
     }
 }
 
 @include media(sm) {
-    .swiper {
-        width: 300px;
-        height: 470px;
-    }
-
-    .swiper-button-prev {
-        left: calc(50% - 200px);
-    }
-    
-    .swiper-button-next {
-        right: calc(50% - 200px);
-    }
+    @include swiper-set-size(300px, 470px, 200px);
 }
 
 @include media(lg) {
-    .swiper {
-        width: 570px;
-        height: 486px;
-    }
-
-    .swiper-button-prev {
-        left: calc(50% - 380px);
-    }
-    
-    .swiper-button-next {
-        right: calc(50% - 380px);
-    }
+    @include swiper-set-size(570px, 486px, 380px);
 }
 
 @include media(xl) {
-    .swiper {
-        width: 900px;
-        height: 496px;
-    }
-
-    .swiper-button-prev {
-        left: calc(50% - 500px);
-    }
-    
-    .swiper-button-next {
-        right: calc(50% - 500px);
-    }
+    @include swiper-set-size(900px, 496px, 500px);
 }
 
 @include media(xxl) {
-    .swiper {
-        width: 1200px;
-        height: 500px;
-    }
+    @include swiper-set-size(1200px, 500px, 650px);
+}
 
-    .swiper-button-prev {
-        left: calc(50% - 650px);
-    }
-    
-    .swiper-button-next {
-        right: calc(50% - 650px);
-    }
+@media (min-width: 1500px) {
+    @include swiper-set-size(1200px, 500px, 680px);
 }

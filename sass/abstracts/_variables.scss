@@ -12,37 +12,83 @@ Typography
 ================= */
 // General
 $ff: 'Poppins', sans-serif;
-$fs-small: 0.75rem;
-$fs-p: 0.875rem;
-$fs-1: 2.5rem;
-$fs-2: 1.875rem;
-$fs-3: 1.25rem;
-$fs-4: 1rem;
+$fs-small: (
+    xs: 0.75rem,
+    xxl: 0.875rem
+);
+
+$fs-p: (
+    xs: 0.875rem,
+    xxl: 1.25rem
+);
+
+$fs-1: (
+    xs: 2.5rem, 
+    xxl: 5rem
+);
+
+$fs-2: (
+    xs: 1.875rem,
+    xxl: 4.375rem
+);
+
+$fs-3: (
+    xs: 1.25rem,
+    xxl: 3rem
+);
+
+$fs-4: (
+    xs: 1rem,
+    xxl: 1.875rem
+);
 
 // Hero section
-$fs-nav-logo: 1.125rem;
-$fs-nav-link: 1rem;
-$fs-h1-span: $fs-2;
-$fs-btn-hero: 1rem;
+$fs-nav-logo: (
+    xs: 1.125rem,
+    xxl: 1.5rem
+);
+
+$fs-nav-link: (
+    xs: 1rem,
+    xxl: 1.375rem
+);
+
+$fs-h1-span: (
+    xs: 1.875rem,
+    xxl: 3.75rem
+);
+
+$fs-btn-hero: (
+    xs: 1rem,
+    xxl: 1.375rem
+);
 
 // Section
-$fs-btn: $fs-p;
-$fs-tag: $fs-small;
-$fs-certificate-by: $fs-small;
+$fs-btn: (
+    xs: 0.875rem,
+    xxl: 1.125rem
+);
+
+$fs-tag: (
+    xs: 0.75rem,
+    xxl: 0.875rem
+);
+
+$fs-certificate-by: (
+    xs: 0.75rem,
+    xxl: 1.125rem
+);
 
 // Card
-$fs-card-label: $fs-p;
-$fs-card-body: $fs-small;
-$fs-card-title: calc($fs-card-body * 2);
-$fs-card-btn: $fs-p;
-$fs-card-tag: $fs-small; 
+$fs-card-label: 0.875rem;
+$fs-card-body: 0.75rem;
+$fs-card-title: 1.5rem;
+$fs-card-btn: 0.875rem;
+$fs-card-tag: 0.75rem;
 
 /* =================
 Layout
 ================= */
-$wrapper-width: 90%;
-$wrapper-margin: calc((100% - $wrapper-width) / 2);
-
 $spacer-xs: 0.25em;
 $spacer-sm: 0.5em;
 $spacer: 1em;
@@ -58,6 +104,12 @@ $breakpoints: (
     xl: 1200px,
     xxl: 1400px
 );
+
+// Default wrapper
+$wrapper-width: 90%;
+$wrapper-margin: calc((100% - $wrapper-width) / 2);
+$wrapper-width-xxl: 75%;
+$wrapper-margin-xxl: calc((100% - $wrapper-width-xxl) / 2);
 
 // Animations
 $menu-anim-spd: 350ms;

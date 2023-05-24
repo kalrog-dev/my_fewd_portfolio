@@ -7,6 +7,17 @@ Layout
 /* =================
 Other
 ================= */
+.certificate.unfinished {
+  opacity: 0.7;
+}
+.certificate.unfinished .certificate-by::after {
+  content: " (in progress...)";
+  color: hsl(185, 70%, 28%);
+}
+.certificate.unfinished .certificate-link-icon {
+  display: none;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -351,6 +362,22 @@ img {
   width: 30px;
 }
 
+.size-lg {
+  transform: scale(1.1);
+}
+
+.size-sm {
+  transform: scale(0.9);
+}
+
+.size-xs {
+  transform: scale(0.8);
+}
+
+.size-xxs {
+  transform: scale(0.7);
+}
+
 .container {
   width: 90%;
   margin-inline: auto;
@@ -363,10 +390,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.hide {
-  display: none;
 }
 
 section:not(.hero-section) {
@@ -384,6 +407,17 @@ section:nth-of-type(even) {
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
+  }
+}
+@media (min-width: 1600px) {
+  h2 {
+    margin-left: 6.25%;
+  }
+  h3 {
+    margin-inline: 12.5%;
+  }
+  .container {
+    width: 75%;
   }
 }
 @font-face {
@@ -487,11 +521,29 @@ h4 {
   color: hsl(230, 6%, 21%);
 }
 
+.nav-logo {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(230, 6%, 21%);
+}
+
 .nav-link {
   font-size: 0.875rem;
   font-weight: 500;
   color: hsl(230, 6%, 21%);
   text-transform: capitalize;
+}
+
+.project-btn {
+  font-size: 0.875rem;
+}
+
+.btn-hero {
+  font-size: 1rem;
+}
+
+.project-tech-list li {
+  font-size: 0.75rem;
 }
 
 .card-label {
@@ -526,12 +578,6 @@ h4 {
   color: hsl(0, 0%, 100%);
 }
 
-.nav-logo {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: hsl(230, 6%, 21%);
-}
-
 .certificate-title {
   font-size: 0.875rem;
   font-weight: 600;
@@ -546,13 +592,59 @@ h4 {
   line-height: 1.5;
 }
 
+@media (min-width: 1400px) {
+  body {
+    font-size: 1.25rem;
+  }
+  .card {
+    font-size: 0.875rem;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  h1 span {
+    font-size: 3.75rem;
+  }
+  h2 {
+    font-size: 4.375rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  h3::before {
+    border-radius: 5px;
+  }
+  h4 {
+    font-size: 1.875rem;
+  }
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+  .nav-link {
+    font-size: 1.25rem;
+  }
+  .btn-hero {
+    font-size: 1.375rem;
+  }
+  .project-btn {
+    font-size: 1.125rem;
+  }
+  .project-tech-list li {
+    font-size: 0.875rem;
+  }
+  .certificate-title {
+    font-size: 1.25rem;
+  }
+  .certificate-by {
+    font-size: 1.125rem;
+  }
+}
 .btn {
   display: inline-block;
   padding: 0.75em 1.575em 0.75em;
   margin-block: 0;
   text-align: center;
   color: hsl(185, 70%, 28%);
-  font-size: 0.875rem;
   font-weight: 500;
   background-color: hsl(0, 0%, 100%);
   border: 2px solid hsl(185, 70%, 28%);
@@ -567,7 +659,6 @@ h4 {
 
 .btn-hero {
   padding: 0.5em 1.05em;
-  font-size: 1rem;
   border-radius: 6px;
 }
 
@@ -598,14 +689,28 @@ h4 {
   float: right;
 }
 
+@media (min-width: 1400px) {
+  .btn-hero {
+    width: max-content;
+    margin-top: 1em;
+  }
+  .form-btn {
+    float: left;
+  }
+}
 header {
+  position: absolute;
+  width: 100%;
   padding-block: 1em;
+}
+
+.nav-logo {
+  padding-block: 0.2em;
 }
 
 .nav-main {
   position: absolute;
-  inset: auto 0;
-  margin-top: 1em;
+  inset: 100% 0 auto;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   transition-property: clip-path;
   transition-duration: 350ms;
@@ -655,6 +760,25 @@ header {
   transform: rotate(-45deg);
 }
 
+@media (min-width: 992px) {
+  .nav-menu-btn {
+    display: none;
+  }
+  .nav-main {
+    position: static;
+    clip-path: none;
+    background-color: hsl(0, 0%, 100%);
+  }
+  .nav-main .nav-list {
+    display: flex;
+  }
+  .nav-main .nav-item:hover {
+    background-color: hsl(0, 0%, 100%);
+  }
+  .nav-main .nav-link {
+    padding: 0.5em 1em;
+  }
+}
 .about-container {
   flex-direction: column;
   align-items: stretch;
@@ -672,9 +796,6 @@ header {
 .about-tech-list img {
   width: 20px;
   margin-right: 0.85em;
-}
-.about-tech-list img.small {
-  transform: scale(0.8);
 }
 
 .about-tech-item {
@@ -764,6 +885,14 @@ header {
   .about-container .col-two {
     flex: 3;
   }
+  .about-container .col-two h3:first-of-type {
+    margin-top: 0;
+  }
+}
+@media (min-width: 1400px) {
+  .about-tech-list img {
+    width: 30px;
+  }
 }
 .card-container {
   display: grid;
@@ -845,31 +974,60 @@ header {
   border-radius: 50%;
 }
 
+@media (min-width: 1600px) {
+  .card-container {
+    width: 75%;
+  }
+}
+/* =================
+Swiper
+================= */
 .swiper {
   width: 90%;
   height: 468px;
 }
 
+.swiper-slide {
+  cursor: grab;
+}
+
 .swiper-button-prev {
-  color: hsl(230, 6%, 21%);
+  color: hsl(229, 5%, 41%);
   top: 205px;
   left: calc(50% - 156px);
 }
 
 .swiper-button-next {
-  color: hsl(230, 6%, 21%);
+  color: hsl(229, 5%, 41%);
   top: 205px;
   right: calc(50% - 156px);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px;
+}
+
+.swiper-pagination {
+  pointer-events: none;
 }
 
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
   background-color: hsl(185, 70%, 28%);
+  width: 15px;
+  height: 15px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 3px;
 }
 
 @media (min-width: 360px) {
   .swiper {
     width: 270px;
+    height: 468px;
   }
   .swiper-button-prev {
     left: calc(50% - 166px);
@@ -879,11 +1037,19 @@ header {
   }
 }
 @media (min-width: 440px) {
+  .swiper {
+    width: 270px;
+    height: 468px;
+  }
   .swiper-button-prev {
     left: calc(50% - 200px);
   }
   .swiper-button-next {
     right: calc(50% - 200px);
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 50px;
   }
 }
 @media (min-width: 576px) {
@@ -932,6 +1098,18 @@ header {
   }
   .swiper-button-next {
     right: calc(50% - 650px);
+  }
+}
+@media (min-width: 1500px) {
+  .swiper {
+    width: 1200px;
+    height: 500px;
+  }
+  .swiper-button-prev {
+    left: calc(50% - 680px);
+  }
+  .swiper-button-next {
+    right: calc(50% - 680px);
   }
 }
 .contact-container {
@@ -999,9 +1177,19 @@ label[for=message] {
   margin-block: 2px 0;
 }
 
+@media (min-width: 1400px) {
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 8em;
+  }
+  .contact-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
 .hero-section {
-  min-height: 85vh;
-  padding-top: 4em;
+  min-height: 100vh;
+  padding-top: 7.2em;
 }
 
 .hero-container {
@@ -1016,12 +1204,32 @@ label[for=message] {
 
 .hero-body {
   order: 1;
+  margin-bottom: 1.5em;
 }
 
 h1 {
   margin-bottom: 1em;
 }
 
+@media (min-width: 1400px) {
+  .hero-container {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 600px;
+  }
+  h1 {
+    margin-block: 0;
+  }
+  .hero-image {
+    align-self: flex-end;
+  }
+  .hero-body {
+    max-width: 50%;
+    margin-top: 4em;
+    order: 0;
+  }
+}
 .project-container {
   display: flex;
   flex-direction: column;
@@ -1047,7 +1255,6 @@ h1 {
   position: relative;
   padding: 0.25em 0.6em;
   text-align: center;
-  font-size: 0.75rem;
   color: hsl(0, 0%, 100%);
   background-color: hsl(230, 6%, 21%);
   min-width: 48px;
@@ -1092,6 +1299,14 @@ h1 {
   }
   .project-image-container .project-image {
     width: 100%;
+  }
+}
+@media (min-width: 1600px) {
+  .project-info {
+    margin-inline: 12.5%;
+  }
+  .project-image {
+    width: 87.5%;
   }
 }
 

@@ -3,6 +3,25 @@
 // Media queries
 @mixin media($size) {
     @media (min-width: map-get($breakpoints, $size)) {
-        @content
+        @content;
     }
 }
+
+// Swiper @media settings
+@mixin swiper-set-size($width, $height, $arrow-offset) {
+    .swiper {
+        width: $width;
+        height: $height;
+    }
+    
+    .swiper-button-prev {
+        left: calc(50% - $arrow-offset);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - $arrow-offset);
+    }
+
+    @content;
+}
+

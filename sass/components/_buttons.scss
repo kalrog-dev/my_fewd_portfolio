@@ -7,7 +7,6 @@
     margin-block: 0;
     text-align: center;
     color: $clr-primary;
-    font-size: $fs-btn;
     font-weight: 500;
     background-color: $clr-neutral-100;
     border: 2px solid $clr-primary;
@@ -23,7 +22,6 @@
 // Hero section
 .btn-hero {
     padding: $spacer-sm calc($spacer-sm * 2.1);
-    font-size: $fs-btn-hero;
     border-radius: $br;
 }
 
@@ -55,4 +53,15 @@
     padding: calc($spacer-sm * 1.25) calc($spacer-sm * 3);
     border-radius: 8px;
     float: right;
+}
+
+@include media(xxl) {
+    .btn-hero {
+        width: max-content;
+        margin-top: 1em;
+    }
+
+    .form-btn {
+        float: left;
+    }
 }

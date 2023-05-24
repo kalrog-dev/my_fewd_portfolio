@@ -67,3 +67,15 @@ label[for="message"] {
 .contact-info p {
     margin-block: 2px 0;
 }
+
+@include media(xxl) {
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 8em;
+    }
+
+    .contact-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
