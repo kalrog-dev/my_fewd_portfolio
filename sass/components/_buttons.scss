@@ -11,18 +11,43 @@
     background-color: $clr-neutral-100;
     border: 2px solid $clr-primary;
     border-radius: 10px;
+    transition-property: color, background-color, border-color;
+    transition-duration: 0.15s;
+    cursor: pointer;
+
+    &:hover {
+        color: $clr-neutral-800;
+        border: 2px solid $clr-neutral-800;
+    }
 }
 
 .btn-primary {
     color: $clr-neutral-100;
     background-color: $clr-primary;
     border: 2px solid $clr-primary;
+
+    &:hover {
+        color: $clr-neutral-100;
+        background-color: $clr-neutral-800;
+        border: 2px solid $clr-neutral-800;
+    }
 }
 
 // Hero section
 .btn-hero {
     padding: $spacer-sm calc($spacer-sm * 2.1);
     border-radius: $br;
+
+    &:hover {
+        color: $clr-neutral-100;
+        background-color: $clr-primary;
+        border: 2px solid $clr-primary;
+    }
+}
+
+.btn-hero {
+    width: max-content;
+    margin-top: $spacer;
 }
 
 // Showcase section
@@ -32,7 +57,7 @@
     &::before {
         content: url('../../assets/img/arrow.svg');
         position: absolute;
-        top: -100%;
+        bottom: calc($spacer * 0.75);
         left: 110%;
         pointer-events: none;
     }
@@ -58,7 +83,7 @@
 @include media(xxl) {
     .btn-hero {
         width: max-content;
-        margin-top: 1em;
+        margin-top: $spacer;
     }
 
     .form-btn {

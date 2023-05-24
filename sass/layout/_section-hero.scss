@@ -1,5 +1,6 @@
 @use '../abstracts' as *;
 
+// Layout
 .hero-section {
     min-height: 100vh;
     padding-top: 7.2em;
@@ -20,16 +21,12 @@
     margin-bottom: $spacer-md;
 }
 
-h1 {
-    margin-bottom: $spacer;
-}
-
-@include media(xxl) {
+@include media(lg) {
     .hero-container {
         flex-wrap: wrap;
         justify-content: flex-end;
         align-items: flex-start;
-        height: 600px;
+        height: 550px;
     }
 
     h1 {
@@ -38,11 +35,32 @@ h1 {
 
     .hero-image {
         align-self: flex-end;
+        max-width: 48%;
     }
 
     .hero-body {
-        max-width: 50%;
-        margin-top: 4em;
+        max-width: 48%;
+        margin-top: 3em;
         order: 0;
+    }
+}
+
+@include media(xl) {
+    .hero-container {
+        height: 575px;
+    }
+
+    .hero-body {
+        margin-top: 3.5em;
+    }
+}
+
+@include media(xxl) {
+    .hero-container {
+        height: 600px;
+    }
+
+    .hero-body {
+        margin-top: 4em;
     }
 }

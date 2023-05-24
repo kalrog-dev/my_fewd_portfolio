@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+@each $size, $wrapper-map in $wrappers {
+    @include media($size) {
+        // Base styles
+        h2 {
+            @if ($size == 'xs' or $size == 'sm') {
+                margin-left: 0;
+            } @else {
+                margin-left: calc(map-get($wrapper-map, "margin") / 2);
+            }
+        }
+
+        h3 {
+            margin-inline: map-get($wrapper-map, "margin");
+        }
+
+        .container {
+            width: map-get($wrapper-map, "width");
+        }
+
+        // Cards section
+        .card-container {
+            width: map-get($wrapper-map, "width");
+        }
+
+        // Showcase section
+        .project-info {
+            margin-inline: map-get($wrapper-map, "margin");
+        }
+
+        .project-image {
+            width: calc(100% - map-get($wrapper-map, "margin"));
+        }
+    }
+}

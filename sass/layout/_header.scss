@@ -17,6 +17,7 @@ header {
     transition-property: clip-path;
     transition-duration: $menu-anim-spd;
     background-color: $clr-neutral-200;
+    z-index: 10;
 
     &.show {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

@@ -5,10 +5,6 @@
     flex-direction: column;
 }
 
-.project-info {
-    margin-inline: $wrapper-margin;
-}
-
 .project-content-group {
     margin-block: $spacer $spacer-xl;
 }
@@ -52,7 +48,6 @@
 }
 
 .project-image {
-    width: calc(100% - $wrapper-margin);
     height: 86%;
     object-fit: cover;
     border-radius: 0 10px 10px 0;
@@ -66,7 +61,6 @@
 
     .project-info {
         flex: 3;
-        margin-left: $wrapper-margin;
     }
 
     .project-image-container {
@@ -75,15 +69,5 @@
         .project-image {
             width: 100%;
         }
-    }
-}
-
-@media (min-width: 1600px) {
-    .project-info {
-        margin-inline: $wrapper-margin-xxl;
-    }
-
-    .project-image {
-        width: calc(100% - $wrapper-margin-xxl);
     }
 }

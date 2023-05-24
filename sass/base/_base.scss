@@ -16,7 +16,6 @@ h2 {
 }
 
 h3 {
-    margin-inline: $wrapper-margin;
     margin-bottom: $spacer;
 }
 
@@ -55,7 +54,6 @@ img {
 
 // General layout
 .container {
-    width: $wrapper-width;
     margin-inline: auto;
 
     h3 {
@@ -89,16 +87,15 @@ section:nth-of-type(even) {
     }
 }
 
-@media (min-width: 1600px) {
-    h2 {
-        margin-left: calc($wrapper-margin-xxl / 2);
-    }
-
+@include media(xxl) {
     h3 {
-        margin-inline: $wrapper-margin-xxl;
-    }
+        &:not(.subheading) {
+            margin-top: calc($spacer * 1.35);
+        }
 
-    .container {
-        width: $wrapper-width-xxl;
+        &::before { 
+            border-radius: 5px;
+        }
     }
 }
+

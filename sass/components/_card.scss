@@ -1,0 +1,82 @@
+@use '../abstracts' as *;
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    width: 240px;
+    margin: auto;
+    border-radius: $br;
+    box-shadow: $shadow;
+    // Prevent text selection
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    &:first-of-type {
+        margin-top: $spacer;
+    }
+
+    .card-label {
+        grid-column: 1 / 2;
+        padding: $spacer-md $spacer-md 0;
+        margin: 0;
+        background-color: rgba($clr-primary, 0.05);
+    }
+}
+
+.card-main-content {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    padding: $spacer-md;
+    background-color: rgba($clr-primary, 0.05);
+
+    .card-title {
+        margin-bottom: $spacer;
+    }
+
+    .card-body {
+        order: 1;
+        margin-block: $spacer-md 3em;
+    }
+}
+
+.card-sidebar {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacer-md $spacer $spacer;
+
+    .card-tech-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .card-tag {
+        position: relative;
+        text-align: center;
+        margin-block: $spacer-sm;
+        padding: 0.2em 0.6em;
+        background-color: $clr-neutral-800;
+        border-radius: 15px;
+
+        &:first-of-type::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -$spacer - 0.3em;
+            width: 3px;
+            background-color: $clr-primary;
+            border-radius: 100vw;
+        }
+    }
+
+    .card-github-link {
+        height: 31px;
+        border-radius: 50%;
+    }
+}
