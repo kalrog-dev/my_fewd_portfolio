@@ -8,8 +8,7 @@
 // Technical skills
 .about-tech-list {   
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+    @include grid-set-template(6, 2);
     grid-auto-flow: column;
     padding: 0;
     margin-bottom: 0;
@@ -103,15 +102,32 @@
     transform: scale(0.9);
 }
 
-// Media queries
+/* =================
+Media queries
+================= */
 @include media(sm) {
     .about-tech-list {   
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(3, 1fr);
+        // Tech icon list - set grid rows and cols
+        @include grid-set-template(4, 3);
     }
 }
 
-@include media(xl) {
+@include media(md) {
+    // Increase tech icon sizes
+    .about-tech-list {   
+        img {
+            width: 25px;
+        }
+    }
+
+    // External link icon offset
+    .certificate-link {
+        top: -1px;
+    }
+}
+
+@include media(lg) {
+    // Section 2-column layout
     .about-container {
         flex-direction: row;
         gap: $spacer-xl;
@@ -128,14 +144,25 @@
             }
         }
     }
-
-    
 }
 
-@include media(xxl) {
+@include media(xl) {
+    // Increase tech icon sizes
     .about-tech-list {   
         img {
             width: 30px;
         }
+    }
+
+    // External link icon offset
+    .certificate-link {
+        top: 0px;
+    }
+}
+
+@include media(xxl) {
+    // External link icon offset
+    .certificate-link {
+        top: 2px;
     }
 }

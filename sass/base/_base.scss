@@ -87,7 +87,31 @@ section:nth-of-type(even) {
     }
 }
 
-@include media(xxl) {
+@include media(sm) {
+    h3 {
+        &:not(.subheading) {
+            margin-top: calc($spacer * 2.25);
+        }
+    }
+}
+
+@include media(md) {
+    h3 {
+        &:not(.subheading) {
+            margin-top: calc($spacer * 2);
+        }
+    }
+}
+
+@include media(lg) {
+    h3 {
+        &:not(.subheading) {
+            margin-top: calc($spacer * 1.5);
+        }
+    }
+}
+
+@include media(xl) {
     h3 {
         &:not(.subheading) {
             margin-top: calc($spacer * 1.35);

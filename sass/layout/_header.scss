@@ -99,13 +99,22 @@ header {
         }
     
         .nav-item {
+            transition-property: background-color, color;
+            transition-duration: 0.2s;
+            border-radius: 5px;
+
             &:hover {
-                background-color: $clr-neutral-100;
+                background-color: $clr-neutral-200;
+
+                .nav-link {
+                    color: $clr-primary;
+                }
             }
         }
 
         .nav-link {
-            padding: $spacer-sm $spacer;
+            padding: $spacer-xs;
+            margin-inline: $spacer-sm;
         }
     }
 }

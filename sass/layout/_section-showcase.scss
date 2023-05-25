@@ -63,11 +63,27 @@
         flex: 3;
     }
 
+    .project-tech-list li {
+        padding: 0.25em 0.6em 0.2em;
+    }
+
+    .project-tech-list li:first-of-type::after {
+            bottom: -11px;
+            height: 3px;
+    }
+
     .project-image-container {
         flex: 4;
 
         .project-image {
             width: 100%;
         }
+    }
+}
+
+@include media(xxl) {
+    .project-tech-list li:first-of-type::after {
+        bottom: -14px;
+        height: 4px;
     }
 }

@@ -192,12 +192,15 @@ $wrappers: (
     )
 );
 
-// Animations
+/* =================
+Animations
+================= */
 $menu-anim-spd: 350ms;
 $menu-anim-timing-func: ease-in;
 
 /* =================
 Other
 ================= */
+$btn-mix-value: 70%;
 $shadow: 2px 2px 15px hsla(0, 0%, 0%, 20%); 
 $br: 6px;

@@ -5,6 +5,9 @@ Typography
 Layout
 ================= */
 /* =================
+Animations
+================= */
+/* =================
 Other
 ================= */
 .certificate.unfinished {
@@ -416,7 +419,22 @@ section:nth-of-type(even) {
     scroll-behavior: auto;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 576px) {
+  h3:not(.subheading) {
+    margin-top: 2.25em;
+  }
+}
+@media (min-width: 768px) {
+  h3:not(.subheading) {
+    margin-top: 2em;
+  }
+}
+@media (min-width: 992px) {
+  h3:not(.subheading) {
+    margin-top: 1.5em;
+  }
+}
+@media (min-width: 1200px) {
   h3:not(.subheading) {
     margin-top: 1.35em;
   }
@@ -831,7 +849,8 @@ h4 {
 }
 .btn {
   display: inline-block;
-  padding: 0.75em 1.575em 0.75em;
+  position: relative;
+  padding: 0.75em 1.575em;
   margin-block: 0;
   text-align: center;
   color: hsl(185, 70%, 28%);
@@ -839,13 +858,7 @@ h4 {
   background-color: hsl(0, 0%, 100%);
   border: 2px solid hsl(185, 70%, 28%);
   border-radius: 10px;
-  transition-property: color, background-color, border-color;
-  transition-duration: 0.15s;
   cursor: pointer;
-}
-.btn:hover {
-  color: hsl(230, 6%, 21%);
-  border: 2px solid hsl(230, 6%, 21%);
 }
 
 .btn-primary {
@@ -853,36 +866,71 @@ h4 {
   background-color: hsl(185, 70%, 28%);
   border: 2px solid hsl(185, 70%, 28%);
 }
-.btn-primary:hover {
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(230, 6%, 21%);
-  border: 2px solid hsl(230, 6%, 21%);
-}
-
-.btn-hero {
-  padding: 0.5em 1.05em;
-  border-radius: 6px;
-}
-.btn-hero:hover {
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(185, 70%, 28%);
-  border: 2px solid hsl(185, 70%, 28%);
-}
 
 .btn-hero {
   width: max-content;
+  padding: 0.5em 1.05em;
   margin-top: 1em;
+  border-radius: 6px;
+  transition-property: color;
+  transition-duration: 0.35s;
+}
+.btn-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(185, 70%, 28%);
+  transform: scaleX(0%);
+  transition: transform 0.65s ease-in;
+  transform-origin: right;
+  z-index: -1;
+}
+.btn-hero:hover {
+  color: hsl(0, 0%, 100%);
+}
+.btn-hero:hover::after {
+  transform: scaleX(100%);
+  transform-origin: left;
 }
 
-.project-btn.btn-primary {
-  position: relative;
+.project-btn {
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.2s;
 }
+.project-btn.btn-primary:hover {
+  background-color: #1e5e66;
+  border-color: #1e5e66;
+}
+.project-btn:not(.btn-primary):hover {
+  color: #1e5e66;
+  border-color: #1e5e66;
+}
+.project-btn.btn-primary:hover::before {
+  transform: scale(1.1);
+}
+@media (min-width: 1400px) {
+  .project-btn.btn-primary:hover::before {
+    transform: scale(1.06);
+  }
+}
+
 .project-btn.btn-primary::before {
   content: url("../../assets/img/arrow.svg");
   position: absolute;
   bottom: 0.75em;
-  left: 110%;
+  left: 113%;
   pointer-events: none;
+  transition: transform 0.4s;
+}
+@media (min-width: 1400px) {
+  .project-btn.btn-primary::before {
+    content: url("../../assets/img/arrow-lg.svg");
+    bottom: 0.25em;
+    left: 120%;
+  }
 }
 
 .button-group {
@@ -892,19 +940,47 @@ h4 {
 }
 
 .card-btn {
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.2s;
   padding: 0.55em;
+}
+.card-btn.btn-primary:hover {
+  background-color: #1e5e66;
+  border-color: #1e5e66;
+}
+.card-btn:not(.btn-primary):hover {
+  color: #1e5e66;
+  border-color: #1e5e66;
 }
 
 .form-btn {
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.2s;
   padding: 0.625em 1.5em;
   border-radius: 8px;
   float: right;
+}
+.form-btn.btn-primary:hover {
+  background-color: #1e5e66;
+  border-color: #1e5e66;
+}
+.form-btn:not(.btn-primary):hover {
+  color: #1e5e66;
+  border-color: #1e5e66;
 }
 
 @media (min-width: 1400px) {
   .btn-hero {
     width: max-content;
     margin-top: 1em;
+  }
+  .project-btn.btn-primary::before {
+    content: url("../../assets/img/arrow-lg.svg");
+    bottom: 0.25em;
+    left: 120%;
+  }
+  .project-btn.btn-primary:hover::before {
+    transform: scale(1.06);
   }
   .form-btn {
     float: left;
@@ -1203,11 +1279,20 @@ header {
   .nav-main .nav-list {
     display: flex;
   }
+  .nav-main .nav-item {
+    transition-property: background-color, color;
+    transition-duration: 0.2s;
+    border-radius: 5px;
+  }
   .nav-main .nav-item:hover {
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 96%);
+  }
+  .nav-main .nav-item:hover .nav-link {
+    color: hsl(185, 70%, 28%);
   }
   .nav-main .nav-link {
-    padding: 0.5em 1em;
+    padding: 0.25em;
+    margin-inline: 0.5em;
   }
 }
 .about-container {
@@ -1299,13 +1384,24 @@ header {
   transform: scale(0.9);
 }
 
+/* =================
+Media queries
+================= */
 @media (min-width: 576px) {
   .about-tech-list {
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
+  .about-tech-list img {
+    width: 25px;
+  }
+  .certificate-link {
+    top: -1px;
+  }
+}
+@media (min-width: 992px) {
   .about-container {
     flex-direction: row;
     gap: 4em;
@@ -1320,9 +1416,17 @@ header {
     margin-top: 0;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .about-tech-list img {
     width: 30px;
+  }
+  .certificate-link {
+    top: 0px;
+  }
+}
+@media (min-width: 1400px) {
+  .certificate-link {
+    top: 2px;
   }
 }
 .card-container {
@@ -1397,11 +1501,26 @@ label[for=message] {
   margin-block: 2px 0;
 }
 
-@media (min-width: 1400px) {
+/* =================
+Media queries
+================= */
+@media (min-width: 992px) {
   .contact-container {
     grid-template-columns: 1fr 1fr;
     gap: 8em;
   }
+  .contact-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+@media (min-width: 1200px) {
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media (min-width: 1400px) {
   .contact-icon {
     width: 30px;
     height: 30px;
@@ -1521,11 +1640,24 @@ label[for=message] {
   .project-info {
     flex: 3;
   }
+  .project-tech-list li {
+    padding: 0.25em 0.6em 0.2em;
+  }
+  .project-tech-list li:first-of-type::after {
+    bottom: -11px;
+    height: 3px;
+  }
   .project-image-container {
     flex: 4;
   }
   .project-image-container .project-image {
     width: 100%;
+  }
+}
+@media (min-width: 1400px) {
+  .project-tech-list li:first-of-type::after {
+    bottom: -14px;
+    height: 4px;
   }
 }
 @media (min-width: 0px) {

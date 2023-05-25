@@ -68,12 +68,30 @@ label[for="message"] {
     margin-block: 2px 0;
 }
 
-@include media(xxl) {
+/* =================
+Media queries
+================= */
+// Section 2-column layout
+@include media(lg) {
     .contact-container {
         grid-template-columns: 1fr 1fr;
         gap: 8em;
     }
 
+    .contact-icon {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@include media(xl) {
+    .contact-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@include media(xxl) {
     .contact-icon {
         width: 30px;
         height: 30px;

@@ -3,7 +3,8 @@
 // Default buttons
 .btn {
     display: inline-block;
-    padding: calc($spacer * 0.75) calc($spacer * 0.75 * 2.1) calc($spacer * 0.75);
+    position: relative;
+    padding: calc($spacer * 0.75) calc($spacer * 0.75 * 2.1);
     margin-block: 0;
     text-align: center;
     color: $clr-primary;
@@ -11,57 +12,76 @@
     background-color: $clr-neutral-100;
     border: 2px solid $clr-primary;
     border-radius: 10px;
-    transition-property: color, background-color, border-color;
-    transition-duration: 0.15s;
     cursor: pointer;
-
-    &:hover {
-        color: $clr-neutral-800;
-        border: 2px solid $clr-neutral-800;
-    }
 }
 
 .btn-primary {
     color: $clr-neutral-100;
     background-color: $clr-primary;
     border: 2px solid $clr-primary;
-
-    &:hover {
-        color: $clr-neutral-100;
-        background-color: $clr-neutral-800;
-        border: 2px solid $clr-neutral-800;
-    }
 }
 
 // Hero section
 .btn-hero {
+    width: max-content;
     padding: $spacer-sm calc($spacer-sm * 2.1);
+    margin-top: $spacer;
     border-radius: $br;
+    transition-property: color;
+    transition-duration: 0.35s;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $clr-primary;
+        transform: scaleX(0%);
+        transition: transform 0.65s ease-in;
+        transform-origin: right;
+        z-index: -1;
+    }
 
     &:hover {
         color: $clr-neutral-100;
-        background-color: $clr-primary;
-        border: 2px solid $clr-primary;
-    }
-}
 
-.btn-hero {
-    width: max-content;
-    margin-top: $spacer;
+        &::after {
+            transform: scaleX(100%);
+            transform-origin: left;
+        }
+    }
 }
 
 // Showcase section
-.project-btn.btn-primary {
-    position: relative;
+.project-btn {
+    @include default-btn-hover-effects();
 
-    &::before {
-        content: url('../../assets/img/arrow.svg');
-        position: absolute;
-        bottom: calc($spacer * 0.75);
-        left: 110%;
-        pointer-events: none;
+    &.btn-primary:hover::before {
+        transform: scale(1.1);
+
+        @include media(xxl) {
+            transform: scale(1.06);
+        }
     }
 }
+
+.project-btn.btn-primary::before {
+    content: url('../../assets/img/arrow.svg');
+    position: absolute;
+    bottom: calc($spacer * 0.75);
+    left: 113%;
+    pointer-events: none;
+    transition: transform 0.4s;
+
+    @include media(xxl) {
+        content: url('../../assets/img/arrow-lg.svg');
+        bottom: calc($spacer * 0.25);
+        left: 120%;
+    }
+}
+
 .button-group {
     display: grid;
     gap: calc($spacer * 0.75);
@@ -70,11 +90,13 @@
 
 // Cards section
 .card-btn {
+    @include default-btn-hover-effects();
     padding: calc($spacer * 0.55);
 }
 
 // Contact section
 .form-btn {
+    @include default-btn-hover-effects();
     padding: calc($spacer-sm * 1.25) calc($spacer-sm * 3);
     border-radius: 8px;
     float: right;
@@ -84,6 +106,16 @@
     .btn-hero {
         width: max-content;
         margin-top: $spacer;
+    }
+
+    .project-btn.btn-primary::before {
+        content: url('../../assets/img/arrow-lg.svg');
+        bottom: calc($spacer * 0.25);
+        left: 120%;
+    }
+
+    .project-btn.btn-primary:hover::before {
+        transform: scale(1.06);
     }
 
     .form-btn {

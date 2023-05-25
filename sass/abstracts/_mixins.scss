@@ -1,10 +1,38 @@
 @use './variables' as *;
 
-// Media queries
+// General media queries
 @mixin media($size) {
     @media (min-width: map-get($breakpoints, $size)) {
         @content();
     }
+}
+
+// Default button on-hover animations
+@mixin default-btn-hover-effects {
+    transition-property: color, background-color, border-color;
+    transition-duration: 0.2s;
+
+    &.btn-primary {
+        &:hover {
+            background-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
+            border-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
+        }
+    }
+
+    &:not(.btn-primary) {
+        &:hover {
+            color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
+            border-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
+        }
+    }  
+}
+
+
+
+// Set grid rows and cols (About section)
+@mixin grid-set-template($rows, $cols) {
+    grid-template-rows: repeat($rows, 1fr);
+    grid-template-columns: repeat($cols, 1fr);
 }
 
 // Swiper @media settings
