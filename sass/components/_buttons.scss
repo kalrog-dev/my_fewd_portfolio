@@ -68,7 +68,7 @@
 }
 
 .project-btn.btn-primary::before {
-    content: url('../../assets/img/arrow.svg');
+    content: url('../assets/img/arrow.svg');
     position: absolute;
     bottom: calc($spacer * 0.75);
     left: 113%;
@@ -76,7 +76,7 @@
     transition: transform 0.4s;
 
     @include media(xxl) {
-        content: url('../../assets/img/arrow-lg.svg');
+        content: url('../assets/img/arrow-lg.svg');
         bottom: calc($spacer * 0.25);
         left: 120%;
     }
@@ -109,7 +109,7 @@
     }
 
     .project-btn.btn-primary::before {
-        content: url('../../assets/img/arrow-lg.svg');
+        content: url('../assets/img/arrow-lg.svg');
         bottom: calc($spacer * 0.25);
         left: 120%;
     }
