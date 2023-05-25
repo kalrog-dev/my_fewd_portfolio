@@ -1,5 +1,7 @@
 @use '../abstracts' as *;
 
+// Since the images make the layout asymmetric, all the wrapper related code is handled here at one place. This cycle sets wrapper-width and wrapper-margin (defined as (100% - wrapper-width) / 2) for all media queries at once. Wrappers are defined in variables.scss in the $wrappers 2D map.
+
 @each $size, $wrapper-map in $wrappers {
     @include media($size) {
         // Base styles

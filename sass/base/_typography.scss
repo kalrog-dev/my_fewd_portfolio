@@ -124,6 +124,7 @@ h4 {
     line-height: 1.5;
 }
 
+// Set font sizes for all media queries at once
 @each $size in $font-breakpoints {
     @include media($size) {
         body { font-size: map-get($fs-p, $size); }

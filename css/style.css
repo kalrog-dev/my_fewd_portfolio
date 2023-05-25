@@ -343,6 +343,12 @@ h1,
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 h2,
 h3,
 h4 {
@@ -472,12 +478,6 @@ section:nth-of-type(even) {
   font-weight: 700;
   src: url("../../assets/fonts/poppins-bold.woff2") format("woff2");
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 :root {
   font-size: 16px;
 }
@@ -560,7 +560,7 @@ h4 {
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: hsl(230, 6%, 21%);
   text-transform: capitalize;
@@ -990,6 +990,7 @@ h4 {
   display: grid;
   grid-template-columns: 1fr max-content;
   width: 240px;
+  height: 400px;
   margin: auto;
   border-radius: 6px;
   box-shadow: 2px 2px 15px hsla(0, 0%, 0%, 0.2);
@@ -1002,6 +1003,7 @@ h4 {
 }
 .card .card-label {
   grid-column: 1/2;
+  height: 50px;
   padding: 1.5em 1.5em 0;
   margin: 0;
   background-color: rgba(21, 113, 121, 0.05);
@@ -1011,6 +1013,7 @@ h4 {
   grid-row: 2;
   display: flex;
   flex-direction: column;
+  height: 350px;
   padding: 1.5em;
   background-color: rgba(21, 113, 121, 0.05);
 }
@@ -1056,6 +1059,12 @@ h4 {
 .card-sidebar .card-github-link {
   height: 31px;
   border-radius: 50%;
+}
+.card-sidebar .card-github-icon {
+  transition: opacity 0.15s;
+}
+.card-sidebar .card-github-icon:hover {
+  opacity: 0.88;
 }
 
 /* =================

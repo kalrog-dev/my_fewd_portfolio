@@ -70,7 +70,6 @@ Swiper
 
 @include media(xxl) {
     @include swiper-set-size(900px, 496px, 500px);
-    // @include swiper-set-size(1200px, 500px, 650px);
 }
 
 @media (min-width: 1600px) {

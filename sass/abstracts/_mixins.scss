@@ -27,7 +27,12 @@
     }  
 }
 
-
+// Prevent text selection
+@mixin prevent-text-selection() {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
 
 // Set grid rows and cols (About section)
 @mixin grid-set-template($rows, $cols) {
