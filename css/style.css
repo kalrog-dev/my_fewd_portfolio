@@ -420,6 +420,10 @@ section:nth-of-type(even) {
   background-color: hsl(0, 0%, 96%);
 }
 
+.hide {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
