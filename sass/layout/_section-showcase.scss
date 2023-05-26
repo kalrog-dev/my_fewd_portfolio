@@ -59,6 +59,11 @@
         flex-direction: row;
     }
 
+    .project-content-group,
+    .project-tech-list {
+        margin-top: 0;
+    }
+
     .project-info {
         flex: 3;
     }

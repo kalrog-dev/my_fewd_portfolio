@@ -25,10 +25,10 @@
 .btn-hero {
     width: max-content;
     padding: $spacer-sm calc($spacer-sm * 2.1);
-    margin-top: $spacer;
+    margin-top: $spacer-xs;
     border-radius: $br;
     transition-property: color;
-    transition-duration: 0.35s;
+    transition-duration: 0.25s;
     
     &::after {
         content: '';
@@ -39,7 +39,7 @@
         height: 100%;
         background-color: $clr-primary;
         transform: scaleX(0%);
-        transition: transform 0.65s ease-in;
+        transition: transform 0.5s ease-in;
         transform-origin: right;
         z-index: -1;
     }
@@ -60,10 +60,6 @@
 
     &.btn-primary:hover::before {
         transform: scale(1.1);
-
-        @include media(xxl) {
-            transform: scale(1.06);
-        }
     }
 }
 
@@ -74,12 +70,6 @@
     left: 113%;
     pointer-events: none;
     transition: transform 0.4s;
-
-    @include media(xxl) {
-        content: url('../assets/img/arrow-lg.svg');
-        bottom: calc($spacer * 0.25);
-        left: 120%;
-    }
 }
 
 .button-group {
@@ -102,12 +92,17 @@
     float: right;
 }
 
-@include media(xxl) {
+@include media(lg) {
     .btn-hero {
-        width: max-content;
         margin-top: $spacer;
     }
 
+    .form-btn {
+        float: left;
+    }
+}
+
+@include media(xxl) {
     .project-btn.btn-primary::before {
         content: url('../assets/img/arrow-lg.svg');
         bottom: calc($spacer * 0.25);
@@ -116,9 +111,5 @@
 
     .project-btn.btn-primary:hover::before {
         transform: scale(1.06);
-    }
-
-    .form-btn {
-        float: left;
     }
 }

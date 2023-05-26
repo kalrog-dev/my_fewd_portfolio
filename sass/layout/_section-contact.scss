@@ -64,8 +64,19 @@ label[for="message"] {
     margin-bottom: $spacer-sm;
 }
 
-.contact-info p {
-    margin-block: 2px 0;
+.contact-info {
+    p {
+        margin-block: 2px 0;
+    }
+
+    .contact-socials-link {
+        color: $clr-primary;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
 }
 
 /* =================

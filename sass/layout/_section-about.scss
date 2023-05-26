@@ -166,3 +166,9 @@ Media queries
         top: 2px;
     }
 }
+
+@include media(xxxl) {
+    .about-container {
+        gap: 6.5em;
+    }
+}
