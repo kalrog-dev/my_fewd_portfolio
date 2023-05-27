@@ -1485,7 +1485,7 @@ textarea:focus {
 
 textarea {
   resize: none;
-  min-height: 100px;
+  min-height: 140px;
 }
 
 label[for=name] {
@@ -1705,10 +1705,10 @@ Media queries
     margin-inline: 6.25%;
   }
   .container {
-    width: 90%;
+    width: 87.5%;
   }
   .card-container {
-    width: 90%;
+    width: 87.5%;
   }
   .project-info {
     margin-inline: 6.25%;
