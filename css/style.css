@@ -1384,6 +1384,18 @@ header {
 
 .certificate-link-icon {
   transform: scale(0.9);
+  transition: transform 0.2s;
+}
+.certificate-link-icon path {
+  transition-property: color, stroke;
+  transition-duration: 0.2s;
+}
+.certificate-link-icon:hover {
+  transform: scale(1.1);
+}
+.certificate-link-icon:hover path {
+  color: hsl(185, 70%, 28%);
+  stroke: hsl(185, 70%, 28%);
 }
 
 /* =================
