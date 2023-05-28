@@ -201,13 +201,17 @@ Media queries
         transform: scale(0);
         transform-origin: left;
         transition: 
-            transform 0.5s ease-in 0.1s,
-            opacity 0.5s ease-in 0.1s;
+                transform 0.45s ease-in 0.4s,
+                opacity 0.45s ease-in 0.4s;
         border: 1px solid #e1e1e1;
+        box-shadow: $shadow-light;
     }
 
     .certificate-link:hover + .certificate-preview {
             transform: scale(1);
             opacity: 1;
+            transition: 
+                transform 0.45s ease-in 0.1s,
+                opacity 0.45s ease-in 0.1s;
     }
 }
