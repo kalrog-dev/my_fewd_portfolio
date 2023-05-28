@@ -117,6 +117,10 @@
     }
 }
 
+.certificate-preview {
+    display: none;
+}
+
 /* =================
 Media queries
 ================= */
@@ -185,5 +189,25 @@ Media queries
 @include media(xxxl) {
     .about-container {
         gap: 6.5em;
+    }
+
+    .certificate-preview {
+        display: block;
+        position: absolute;
+        top: -25px;
+        right: -180px;
+        width: 150px;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: left;
+        transition: 
+            transform 0.5s ease-in 0.1s,
+            opacity 0.5s ease-in 0.1s;
+        border: 1px solid #e1e1e1;
+    }
+
+    .certificate-link:hover + .certificate-preview {
+            transform: scale(1);
+            opacity: 1;
     }
 }
