@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Hi, I'm Michal. A frontend web developer located in Prague, Czechia.">
         <meta name="google-site-verification" content="qB2OTOUtDnP_27lEEpMOsT1kJQVOYURWhkC2kq_7R3I">
-        <title>Michal Veselka | Front-end Web Developer</title>
+        <title>Michal Veselka | Front-End Web Developer</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
         <link rel="stylesheet" href="./css/style.css">
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
@@ -100,11 +100,11 @@
                         </div>
                     </div>
                     <div class="project-image-container">
-                        <img
-                            class="project-image"
-                            src="./assets/img/project-dashboard.webp"
-                            alt="Web App Dashboard"
-                        >
+                        <picture>
+                            <source media="(min-width:768px)" srcset="./assets/img/projects/dashboard-lg.webp">
+                            <source media="(min-width:576px)" srcset="./assets/img/projects/dashboard-md.webp">
+                            <img class="project-image" src="./assets/img/projects/dashboard-sm.webp" alt="Web App Dashboard project">
+                        </picture> 
                     </div>
                 </div>
             </section>
@@ -173,7 +173,7 @@
                                     <p class="card-label">Project 3</p>
                                     <div class="card-main-content">
                                         <h4 class="card-title">Sign-up Form</h4>
-                                        <p class="card-body">A newsletter sign-up form with success message and form validation.<br><br>(Work in progress...)</p>
+                                        <p class="card-body">A newsletter sign-up form with success message and form validation.</p>
                                         <a class="card-btn btn btn-primary" href="https://kalrog-dev.github.io/fem-newsletter-sign-up-form/" target="_blank" rel="noopener noreferrer">View website</a>
                                     </div>
                                     <div class="card-sidebar">
@@ -332,6 +332,19 @@
                                     <svg class="certificate-link-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </a>
                                 <img class="certificate-preview" src="./assets/certificates/treehouse-fewd.webp" alt="Front-End Web Development certificate">
+                            </div>
+                        </div>
+                        <!-- Scrimba - Learn React -->
+                        <div class="certificate unfinished">
+                            <div class="certificate-container flex-container">
+                                <div class="certificate-text">
+                                    <strong class="certificate-title">Learn React</strong>
+                                    <p class="certificate-by">by Scrimba</p>
+                                </div>
+                                <a class="certificate-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Link to certificate">
+                                    <svg class="certificate-link-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1 9-9m0 0h-5m5 0v5" stroke="#323338" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <!-- <img class="certificate-preview" src="./assets/certificates/treehouse-fewd.webp" alt="Front-End Web Development certificate"> -->
                             </div>
                         </div>
                         <!-- Primakurzy - Web Application Programmer -->

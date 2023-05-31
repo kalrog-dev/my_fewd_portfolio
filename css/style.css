@@ -457,30 +457,35 @@ section:nth-of-type(even) {
   font-style: normal;
   font-weight: 300;
   src: url("../assets/fonts/poppins-light.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   src: url("../assets/fonts/poppins-regular.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
   src: url("../assets/fonts/poppins-medium.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   src: url("../assets/fonts/poppins-semibold.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   src: url("../assets/fonts/poppins-bold.woff2") format("woff2");
+  font-display: swap;
 }
 :root {
   font-size: 16px;
@@ -1330,31 +1335,26 @@ header {
   padding-left: 1.5em;
   border-radius: 5px;
 }
-.certificate:nth-of-type(odd) {
-  background-color: hsl(0, 0%, 96%);
-}
-.certificate:nth-of-type(odd)::before {
+.certificate::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 10px;
   height: 100%;
-  background-color: rgba(50, 51, 57, 0.25);
   border-radius: 5px 0 0 5px;
+}
+.certificate:nth-of-type(odd) {
+  background-color: hsl(0, 0%, 96%);
+}
+.certificate:nth-of-type(odd)::before {
+  background-color: rgba(50, 51, 57, 0.25);
 }
 .certificate:nth-of-type(even) {
   background-color: rgba(21, 113, 121, 0.1);
 }
 .certificate:nth-of-type(even)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 100%;
   background-color: rgba(21, 113, 121, 0.25);
-  border-radius: 5px 0 0 5px;
 }
 .certificate:first-of-type {
   margin-top: 2.25em;
@@ -1438,11 +1438,17 @@ Media queries
   .about-tech-list img {
     width: 30px;
   }
+  .certificate::before {
+    width: 11px;
+  }
   .certificate-link {
     top: 0px;
   }
 }
 @media (min-width: 1400px) {
+  .certificate::before {
+    width: 12px;
+  }
   .certificate-link {
     top: 2px;
   }
