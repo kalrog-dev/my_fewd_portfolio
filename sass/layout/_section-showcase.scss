@@ -5,6 +5,18 @@
     flex-direction: column;
 }
 
+section:nth-of-type(odd) .project-container {
+    .project-image-container,
+    picture {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .project-image {
+        border-radius: 10px 0 0 10px;
+    }
+}
+
 .project-content-group {
     margin-block: $spacer $spacer-xl;
 }
@@ -53,10 +65,18 @@
     border-radius: 0 10px 10px 0;
 }
 
+.image-position-bottom {
+    object-position: center bottom;
+}
+
 // Media queries
 @include media(lg) {
-    .project-container {
+    section:nth-of-type(even) .project-container {
         flex-direction: row;
+    }
+
+    section:nth-of-type(odd) .project-container {
+        flex-direction: row-reverse;
     }
 
     .project-content-group,

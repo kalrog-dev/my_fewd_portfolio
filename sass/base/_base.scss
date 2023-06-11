@@ -73,6 +73,10 @@ img {
     align-items: center;
 }
 
+.heading-mt {
+    margin-top: $spacer;
+}
+
 // General styles
 section:not(.hero-section) {
     padding-block: $spacer-md $spacer-lg;

@@ -78,6 +78,22 @@
     width: max-content;
 }
 
+section:nth-of-type(odd) .project-container {
+    .button-group {
+        float: right;
+    }
+
+    .project-btn.btn-primary::before {
+        // left: -78%;
+        left: -88%;
+        transform: rotateY(180deg);
+    }
+
+    .project-btn.btn-primary:hover::before {
+        transform: scale(1.1) rotateY(180deg);
+    }
+}
+
 // Cards section
 .card-btn {
     @include default-btn-hover-effects();
@@ -97,6 +113,12 @@
         margin-top: $spacer;
     }
 
+    section:nth-of-type(odd) .project-container {
+        .project-btn.btn-primary::before {
+            left: -78%;
+        }
+    }
+
     .form-btn {
         float: left;
     }
@@ -111,5 +133,15 @@
 
     .project-btn.btn-primary:hover::before {
         transform: scale(1.06);
+    }
+
+    section:nth-of-type(odd) .project-container {
+        .project-btn.btn-primary::before {
+            left: -125%;
+        }
+
+        .project-btn.btn-primary:hover::before {
+            transform: scale(1.06) rotateY(180deg);
+        }
     }
 }
