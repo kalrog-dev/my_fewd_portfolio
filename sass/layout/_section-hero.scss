@@ -2,7 +2,7 @@
 
 // Layout
 .hero-section {
-    min-height: 100vh;
+    min-height: min(100vh, 1080px);
     padding-top: 7.2em;
 }
 

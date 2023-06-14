@@ -47,28 +47,34 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: $spacer-md $spacer $spacer;
+    width: 58px;
+    padding-block: $spacer-md $spacer;
 
     .card-tech-list {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 0.5em;
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
-    .card-tag {
+    .card-tech-item {
         position: relative;
-        text-align: center;
-        margin-block: $spacer-sm;
-        padding: 0.2em 0.6em;
-        background-color: $clr-neutral-800;
-        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 28px;
+        width: 58px;
 
         &:first-of-type::before {
             content: '';
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -$spacer - 0.3em;
+            top: 2px;
+            bottom: 2px;
+            left: -1px;
             width: 3px;
             background-color: $clr-primary;
             border-radius: 100vw;
