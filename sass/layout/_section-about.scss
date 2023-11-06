@@ -8,7 +8,7 @@
 // Technical skills
 .about-tech-list {   
     display: grid;
-    @include grid-set-template(5, 2);
+    @include grid-set-template(6, 2);
     grid-auto-flow: column;
     padding: 0;
     margin-bottom: 0;
