@@ -3,36 +3,36 @@
 // Since the images make the layout asymmetric, all the wrapper related code is handled here at one place. This cycle sets wrapper-width and wrapper-margin (defined as (100% - wrapper-width) / 2) for all media queries at once. Wrappers are defined in variables.scss in the $wrappers 2D map.
 
 @each $size, $wrapper-map in $wrappers {
-    @include media($size) {
-        // Base styles
-        h2 {
-            @if ($size == 'xs' or $size == 'sm') {
-                margin-left: 0;
-            } @else {
-                margin-left: calc(map-get($wrapper-map, "margin") / 2);
-            }
-        }
-
-        h3 {
-            margin-inline: map-get($wrapper-map, "margin");
-        }
-
-        .container {
-            width: map-get($wrapper-map, "width");
-        }
-
-        // Cards section
-        .card-container {
-            width: map-get($wrapper-map, "width");
-        }
-
-        // Showcase section
-        .project-info {
-            margin-inline: map-get($wrapper-map, "margin");
-        }
-
-        .project-image {
-            width: calc(100% - map-get($wrapper-map, "margin"));
-        }
+  @include media($size) {
+    // Base styles
+    h2 {
+      @if ($size == 'xs' or $size == 'sm') {
+        margin-left: 0;
+      } @else {
+        margin-left: calc(map-get($wrapper-map, "margin") / 2);
+      }
     }
+
+    h3 {
+      margin-inline: map-get($wrapper-map, "margin");
+    }
+
+    .container {
+      width: map-get($wrapper-map, "width");
+    }
+
+    // Cards section
+    .card-container {
+      width: map-get($wrapper-map, "width");
+    }
+
+    // Showcase section
+    .project-info {
+      margin-inline: map-get($wrapper-map, "margin");
+    }
+
+    .project-image {
+      width: calc(100% - map-get($wrapper-map, "margin"));
+    }
+  }
 }

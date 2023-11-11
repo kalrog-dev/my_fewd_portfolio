@@ -1,8 +1,8 @@
 @use '../abstracts' as *;
 
 .card-container {
-    display: grid;
-    position: relative;
-    gap: $spacer;
-    margin-inline: auto;
+  display: grid;
+  position: relative;
+  gap: $spacer;
+  margin-inline: auto;
 }

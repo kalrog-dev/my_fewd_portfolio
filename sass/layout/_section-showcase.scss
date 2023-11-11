@@ -1,132 +1,132 @@
 @use '../abstracts' as *;
 
 .project-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-content-group {
-    margin-block: $spacer $spacer-xl;
+  margin-block: $spacer $spacer-xl;
 }
 
 .project-tech-list {
-    display: flex;
-    justify-content: start;
-    gap: $spacer;
-    padding-inline: 0;
-    margin-bottom: $spacer-md;
-    list-style: none;
+  display: flex;
+  justify-content: start;
+  gap: $spacer;
+  padding-inline: 0;
+  margin-bottom: $spacer-md;
+  list-style: none;
 
-    li {
-        position: relative;
-        padding: 0.25em 0.6em;
-        text-align: center;
-        color: $clr-neutral-100;
-        background-color: $clr-neutral-800;
-        min-width: 48px;
-        border-radius: 10px;
+  li {
+    position: relative;
+    padding: 0.25em 0.6em;
+    text-align: center;
+    color: $clr-neutral-100;
+    background-color: $clr-neutral-800;
+    min-width: 48px;
+    border-radius: 10px;
 
-        &:first-of-type::after {
-            content: '';
-            left: 0;
-            right: 0;
-            bottom: -10px;
-            position: absolute;
-            height: 2px;
-            background-color: $clr-primary;
-            border-radius: 100vw;
-        }
+    &:first-of-type::after {
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      position: absolute;
+      height: 2px;
+      background-color: $clr-primary;
+      border-radius: 100vw;
     }
+  }
 }
 
 .project-body {
-    text-align: left;
+  text-align: left;
 }
 
 .project-image-container {
-    order: -1;
+  order: -1;
 }
 
 .project-image {
-    height: 96%;
-    object-fit: cover;
+  height: 96%;
+  object-fit: cover;
 }
 
 .image-position-bottom {
-    object-position: center bottom;
+  object-position: center bottom;
 }
 
 section:nth-of-type(even) .project-container {
-    .project-image-container,
-    picture {
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-    }
+  .project-image-container,
+  picture {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
 
-    .project-image {
-        border-radius: 0 10px 10px 0;
-        
-    }
+  .project-image {
+    border-radius: 0 10px 10px 0;
+    
+  }
 }
 
 section:nth-of-type(odd) .project-container {
-    .project-image-container,
-    picture {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-    }
+  .project-image-container,
+  picture {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
 
-    .project-image {
-        border-radius: 10px 0 0 10px;
-    }
+  .project-image {
+    border-radius: 10px 0 0 10px;
+  }
 }
 
 // Media queries
 @include media(lg) {
-    section:nth-of-type(even) .project-container {
-        flex-direction: row;
-    }
+  section:nth-of-type(even) .project-container {
+    flex-direction: row;
+  }
 
-    section:nth-of-type(odd) .project-container {
-        flex-direction: row-reverse;
-    }
+  section:nth-of-type(odd) .project-container {
+    flex-direction: row-reverse;
+  }
 
-    .project-content-group,
-    .project-tech-list {
-        margin-top: 0;
-    }
+  .project-content-group,
+  .project-tech-list {
+    margin-top: 0;
+  }
 
-    .project-info {
-        flex: 3;
-    }
+  .project-info {
+    flex: 3;
+  }
 
-    .project-tech-list li {
-        padding: 0.25em 0.6em 0.2em;
-    }
+  .project-tech-list li {
+    padding: 0.25em 0.6em 0.2em;
+  }
 
-    .project-tech-list li:first-of-type::after {
-            bottom: -11px;
-            height: 3px;
-    }
+  .project-tech-list li:first-of-type::after {
+      bottom: -11px;
+      height: 3px;
+  }
 
-    .project-image-container {
-        flex: 4;
+  .project-image-container {
+    flex: 4;
 
-        .project-image {
-            width: 100%;
-        }
+    .project-image {
+      width: 100%;
     }
+  }
 }
 
 @include media(xxl) {
-    .project-tech-list li:first-of-type::after {
-        bottom: -14px;
-        height: 4px;
-    }
+  .project-tech-list li:first-of-type::after {
+    bottom: -14px;
+    height: 4px;
+  }
 
-    .project-image {
-        height: 86%;
-    }
+  .project-image {
+    height: 86%;
+  }
 }

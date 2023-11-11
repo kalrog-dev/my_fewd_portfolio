@@ -1,120 +1,120 @@
 @use '../abstracts' as *;
 
 header {
-    position: absolute;
-    width: 100%;
-    padding-block: $spacer;
+  position: absolute;
+  width: 100%;
+  padding-block: $spacer;
 }
 
 .nav-logo {
-    padding-block: 0.2em;
+  padding-block: 0.2em;
 }
 
 .nav-main {
-    position: absolute;
-    inset: 100% 0 auto;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition-property: clip-path;
-    transition-duration: $menu-anim-spd;
-    background-color: $clr-neutral-200;
-    z-index: 10;
+  position: absolute;
+  inset: 100% 0 auto;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition-property: clip-path;
+  transition-duration: $menu-anim-spd;
+  background-color: $clr-neutral-200;
+  z-index: 10;
 
-    &.show {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    
-    .nav-list {
-        margin: 0;
-        padding-left: 0;
-        list-style: none;
-    }
+  &.show {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  .nav-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
 
-    .nav-item {
-        text-align: center;    
+  .nav-item {
+    text-align: center;  
 
-        &:hover {
-            background-color: rgba($clr-neutral-300, 0.40);
-        }
+    &:hover {
+      background-color: rgba($clr-neutral-300, 0.40);
     }
+  }
 
-    .nav-link {
-        display: block;
-        padding: $spacer;
-    }
+  .nav-link {
+    display: block;
+    padding: $spacer;
+  }
 }
 
 // Navigation menu button
 .nav-menu-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    $anim-spd: calc($menu-anim-spd / 2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  $anim-spd: calc($menu-anim-spd / 2);
 
+  .line {
+    fill: $clr-neutral-800;
+    transform-origin: center;
+    transition:
+      transform $anim-spd $menu-anim-timing-func,
+      opacity 0s $anim-spd,
+      y $anim-spd $menu-anim-timing-func $anim-spd;  
+  }
+
+  // &:hover
+  &.close {
     .line {
-        fill: $clr-neutral-800;
-        transform-origin: center;
-        transition:
-            transform $anim-spd $menu-anim-timing-func,
-            opacity 0s $anim-spd,
-            y $anim-spd $menu-anim-timing-func $anim-spd;  
+      transition: 
+        y $anim-spd $menu-anim-timing-func,
+        opacity 0s $anim-spd,
+        transform $anim-spd $menu-anim-timing-func $anim-spd;
     }
 
-    // &:hover
-    &.close {
-        .line {
-            transition: 
-                y $anim-spd $menu-anim-timing-func,
-                opacity 0s $anim-spd,
-                transform $anim-spd $menu-anim-timing-func $anim-spd;
-        }
-
-        .line.one {
-            y: 24px;
-            transform: rotate(45deg);
-        }
-
-        .line.two {
-            opacity: 0;
-        }
-
-        .line.three {
-            y: 24px;
-            transform: rotate(-45deg);
-        }
+    .line.one {
+      y: 24px;
+      transform: rotate(45deg);
     }
+
+    .line.two {
+      opacity: 0;
+    }
+
+    .line.three {
+      y: 24px;
+      transform: rotate(-45deg);
+    }
+  }
 }
 
 @include media(lg) {
-    .nav-menu-btn {
-        display: none;
+  .nav-menu-btn {
+    display: none;
+  }
+
+  .nav-main {
+    position: static;
+    clip-path: none;
+    background-color: $clr-neutral-100;
+
+    .nav-list {
+      display: flex;
     }
+  
+    .nav-item {
+      transition-property: background-color, color;
+      transition-duration: 0.2s;
+      border-radius: 5px;
 
-    .nav-main {
-        position: static;
-        clip-path: none;
-        background-color: $clr-neutral-100;
-
-        .nav-list {
-            display: flex;
-        }
-    
-        .nav-item {
-            transition-property: background-color, color;
-            transition-duration: 0.2s;
-            border-radius: 5px;
-
-            &:hover {
-                background-color: $clr-neutral-200;
-
-                .nav-link {
-                    color: $clr-primary;
-                }
-            }
-        }
+      &:hover {
+        background-color: $clr-neutral-200;
 
         .nav-link {
-            padding: $spacer-xs;
-            margin-inline: $spacer-sm;
+          color: $clr-primary;
         }
+      }
     }
+
+    .nav-link {
+      padding: $spacer-xs;
+      margin-inline: $spacer-sm;
+    }
+  }
 }

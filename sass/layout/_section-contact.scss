@@ -1,82 +1,82 @@
 @use '../abstracts' as *;
 
 .contact-container {
-    display: grid;
+  display: grid;
 
-    .col:not(:last-of-type) {
-        margin-bottom: $spacer-lg;
-    }
+  .col:not(:last-of-type) {
+    margin-bottom: $spacer-lg;
+  }
 }
 
 .form-group {
-    margin-bottom: $spacer;
+  margin-bottom: $spacer;
 }
 
 .form-label,
 .contact-info {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: $spacer-xs;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $spacer-xs;
 }
 
 .contact-icon {
-    width: 23px;
-    height: 23px;
+  width: 23px;
+  height: 23px;
 
-    path {
-        fill: $clr-primary;
-    }
+  path {
+    fill: $clr-primary;
+  }
 }
 
 input,
 textarea {
-    width: 100%;
-    padding: $spacer-sm;
-    color: $clr-neutral-800;
-    border: 1px solid #e1e1e1;
-    border-radius: 5px;
+  width: 100%;
+  padding: $spacer-sm;
+  color: $clr-neutral-800;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
 
-    &:focus {
-        outline: 2px solid $clr-primary;
-    }
+  &:focus {
+    outline: 2px solid $clr-primary;
+  }
 }
 
 textarea {
-    resize: none;
-    min-height: 140px;
+  resize: none;
+  min-height: 140px;
 }
 
 // Font alignment fix
 label[for="name"] {
-    margin-top: 3px;
+  margin-top: 3px;
 }
 
 label[for="email"] {
-    margin-top: 2px;
+  margin-top: 2px;
 }
 
 label[for="message"] {
-    margin-top: -1px;
+  margin-top: -1px;
 }
 
 .contact-info-heading {
-    margin-bottom: $spacer-sm;
+  margin-bottom: $spacer-sm;
 }
 
 .contact-info {
-    p {
-        margin-block: 2px 0;
-    }
+  p {
+    margin-block: 2px 0;
+  }
 
-    .contact-socials-link {
-        color: $clr-primary;
+  .contact-socials-link {
+    color: $clr-primary;
 
-        &:hover,
-        &:focus {
-            text-decoration: underline;
-        }
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
+  }
 }
 
 /* =================
@@ -84,27 +84,27 @@ Media queries
 ================= */
 // Section 2-column layout
 @include media(lg) {
-    .contact-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 8em;
-    }
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 8em;
+  }
 
-    .contact-icon {
-        width: 26px;
-        height: 26px;
-    }
+  .contact-icon {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 @include media(xl) {
-    .contact-icon {
-        width: 28px;
-        height: 28px;
-    }
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 @include media(xxl) {
-    .contact-icon {
-        width: 30px;
-        height: 30px;
-    }
+  .contact-icon {
+    width: 30px;
+    height: 30px;
+  }
 }

@@ -1,144 +1,144 @@
 @use '../abstracts' as *;
 
 :root {
-    font-size: 16px;
-    $font-breakpoint: xxl;
+  font-size: 16px;
+  $font-breakpoint: xxl;
 }
 
 body {
-    font-family: $ff;
-    font-weight: 400;
-    color: $clr-neutral-800;
-    line-height: 1.6;
+  font-family: $ff;
+  font-weight: 400;
+  color: $clr-neutral-800;
+  line-height: 1.6;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 h1 {
-    font-family: $ff;
-    font-weight: 700;
-    color: $clr-neutral-800;
-    line-height: 1.2;
+  font-family: $ff;
+  font-weight: 700;
+  color: $clr-neutral-800;
+  line-height: 1.2;
 
-    span {
-        font-weight: 700;
-        color: $clr-neutral-400;
-    }
+  span {
+    font-weight: 700;
+    color: $clr-neutral-400;
+  }
 }
 
 h2 {
-    font-weight: 700;
-    color: $clr-neutral-400;
-    line-height: 1.2;
+  font-weight: 700;
+  color: $clr-neutral-400;
+  line-height: 1.2;
 }
 
 h3 {
-    font-weight: 700;
-    color: $clr-neutral-800;
-    line-height: 1.2;
-    position: relative;
-    width: fit-content;
-    z-index: 1;
+  font-weight: 700;
+  color: $clr-neutral-800;
+  line-height: 1.2;
+  position: relative;
+  width: fit-content;
+  z-index: 1;
 
-    &::before {
-        content: "";
-        position: absolute;
-        left: 1px;
-        right: 1px;
-        top: 50%;
-        height: 0.5em;
-        background-color: $clr-primary;
-        opacity: 25%;
-        border-radius: 2px;
-        z-index: -1;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    top: 50%;
+    height: 0.5em;
+    background-color: $clr-primary;
+    opacity: 25%;
+    border-radius: 2px;
+    z-index: -1;
+  }
 }
 
 h4 {
-    font-weight: 700;
-    color: $clr-neutral-800;
+  font-weight: 700;
+  color: $clr-neutral-800;
 }
 
 // Navigation
 .nav-logo {
-    font-weight: 600;
-    color: $clr-neutral-800;
+  font-weight: 600;
+  color: $clr-neutral-800;
 }
 
 .nav-link {
-    font-weight: 500;
-    color: $clr-neutral-800;
-    text-transform: capitalize;
+  font-weight: 500;
+  color: $clr-neutral-800;
+  text-transform: capitalize;
 }
 
 // Card
 .card { 
-    font-size: 0.875rem;
+  font-size: 0.875rem;
 }
 
 .card-label {
-    font-size: $fs-card-label;
-    font-weight: 500;
-    color: $clr-neutral-600;
-    text-transform: uppercase;
+  font-size: $fs-card-label;
+  font-weight: 500;
+  color: $clr-neutral-600;
+  text-transform: uppercase;
 }
 
 .card-title {
-    font-size: $fs-card-title;
-    font-weight: 700;
-    color: $clr-neutral-800;
-    text-transform: capitalize;
+  font-size: $fs-card-title;
+  font-weight: 700;
+  color: $clr-neutral-800;
+  text-transform: capitalize;
 }
 
 .card-body {
-    font-size: $fs-card-body;
-    font-weight: 400;
-    color: $clr-neutral-800;
+  font-size: $fs-card-body;
+  font-weight: 400;
+  color: $clr-neutral-800;
 }
 
 .card-btn {
-    font-size: $fs-card-btn;
-    font-weight: 600;
-    color: $clr-neutral-100;
+  font-size: $fs-card-btn;
+  font-weight: 600;
+  color: $clr-neutral-100;
 }
 
 // Certificate
 .certificate-title {
-    font-weight: 600;
-    color: $clr-neutral-800;
-    line-height: 1.5;
+  font-weight: 600;
+  color: $clr-neutral-800;
+  line-height: 1.5;
 }
 
 .certificate-by {
-    font-weight: 300;
-    color: $clr-neutral-800;
-    line-height: 1.5;
+  font-weight: 300;
+  color: $clr-neutral-800;
+  line-height: 1.5;
 }
 
 // Set font sizes for all media queries at once
 @each $size in $font-breakpoints {
-    @include media($size) {
-        body { font-size: map-get($fs-p, $size); }
-        h1 { font-size: map-get($fs-1, $size); }
-        h1 span { font-size: map-get($fs-h1-span, $size); }
-        h2 { font-size: map-get($fs-2, $size); }
-        h3 { font-size: map-get($fs-3, $size); }
-        h4 { font-size: map-get($fs-4, $size); }
-        .nav-logo { font-size: map-get($fs-nav-logo, $size); }
-        .nav-link { font-size: map-get($fs-p, $size); }
-        .btn-hero { font-size: map-get($fs-btn-hero, $size); }
-        .project-btn { font-size: map-get($fs-btn, $size); }
-        .project-tech-list li { font-size: map-get($fs-tag, $size); }
-        .certificate-title { font-size: map-get($fs-p, $size); }
-        .certificate-by { font-size: map-get($fs-certificate-by, $size); }
-    }
+  @include media($size) {
+    body { font-size: map-get($fs-p, $size); }
+    h1 { font-size: map-get($fs-1, $size); }
+    h1 span { font-size: map-get($fs-h1-span, $size); }
+    h2 { font-size: map-get($fs-2, $size); }
+    h3 { font-size: map-get($fs-3, $size); }
+    h4 { font-size: map-get($fs-4, $size); }
+    .nav-logo { font-size: map-get($fs-nav-logo, $size); }
+    .nav-link { font-size: map-get($fs-p, $size); }
+    .btn-hero { font-size: map-get($fs-btn-hero, $size); }
+    .project-btn { font-size: map-get($fs-btn, $size); }
+    .project-tech-list li { font-size: map-get($fs-tag, $size); }
+    .certificate-title { font-size: map-get($fs-p, $size); }
+    .certificate-by { font-size: map-get($fs-certificate-by, $size); }
+  }
 }
 
 @include media(xxl) {
-    h1 {
-        line-height: 1.1;
-    }
+  h1 {
+    line-height: 1.1;
+  }
 }

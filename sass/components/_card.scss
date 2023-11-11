@@ -1,96 +1,96 @@
 @use '../abstracts' as *;
 
 .card {
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    width: 240px;
-    height: 400px;
-    margin: auto;
-    border-radius: $br;
-    box-shadow: $shadow;
-    @include prevent-text-selection();
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  width: 240px;
+  height: 400px;
+  margin: auto;
+  border-radius: $br;
+  box-shadow: $shadow;
+  @include prevent-text-selection();
 
-    &:first-of-type {
-        margin-top: $spacer;
-    }
+  &:first-of-type {
+    margin-top: $spacer;
+  }
 
-    .card-label {
-        grid-column: 1 / 2;
-        height: 50px;
-        padding: $spacer-md $spacer-md 0;
-        margin: 0;
-        background-color: rgba($clr-primary, 0.05);
-    }
+  .card-label {
+    grid-column: 1 / 2;
+    height: 50px;
+    padding: $spacer-md $spacer-md 0;
+    margin: 0;
+    background-color: rgba($clr-primary, 0.05);
+  }
 }
 
 .card-main-content {
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    height: 350px;
-    padding: $spacer-md;
-    background-color: rgba($clr-primary, 0.05);
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  padding: $spacer-md;
+  background-color: rgba($clr-primary, 0.05);
 
-    .card-title {
-        margin-bottom: $spacer;
-    }
+  .card-title {
+    margin-bottom: $spacer;
+  }
 
-    .card-body {
-        order: 1;
-        margin-block: $spacer-md 3em;
-    }
+  .card-body {
+    order: 1;
+    margin-block: $spacer-md 3em;
+  }
 }
 
 .card-sidebar {
-    grid-row: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 58px;
+  padding-block: $spacer-md $spacer;
+
+  .card-tech-list {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .card-tech-item {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    height: 28px;
     width: 58px;
-    padding-block: $spacer-md $spacer;
 
-    .card-tech-list {
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        gap: 0.5em;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+    &:first-of-type::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      left: -1px;
+      width: 3px;
+      background-color: $clr-primary;
+      border-radius: 100vw;
     }
+  }
 
-    .card-tech-item {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 28px;
-        width: 58px;
+  .card-github-link {
+    height: 31px;
+    border-radius: 50%;
+  }
 
-        &:first-of-type::before {
-            content: '';
-            position: absolute;
-            top: 2px;
-            bottom: 2px;
-            left: -1px;
-            width: 3px;
-            background-color: $clr-primary;
-            border-radius: 100vw;
-        }
+  .card-github-icon {
+    transition: opacity 0.15s;
+
+    &:hover {
+      opacity: 0.88;
     }
-
-    .card-github-link {
-        height: 31px;
-        border-radius: 50%;
-    }
-
-    .card-github-icon {
-        transition: opacity 0.15s;
-
-        &:hover {
-            opacity: 0.88;
-        }
-    }
+  }
 }

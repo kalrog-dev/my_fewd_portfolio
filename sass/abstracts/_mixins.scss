@@ -2,71 +2,71 @@
 
 // General media queries
 @mixin media($size) {
-    @media (min-width: map-get($breakpoints, $size)) {
-        @content();
-    }
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content();
+  }
 }
 
 // Default button on-hover animations
 @mixin default-btn-hover-effects {
-    transition-property: color, background-color, border-color;
-    transition-duration: 0.2s;
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.2s;
 
-    &.btn-primary {
-        &:hover {
-            background-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
-            border-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
-        }
+  &.btn-primary {
+    &:hover {
+      background-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
+      border-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
     }
+  }
 
-    &:not(.btn-primary) {
-        &:hover {
-            color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
-            border-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
-        }
-    }  
+  &:not(.btn-primary) {
+    &:hover {
+      color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
+      border-color: mix($clr-primary, $clr-neutral-800, $btn-mix-value);
+    }
+  }  
 }
 
 // Prevent text selection
 @mixin prevent-text-selection() {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 // Set grid rows and cols (About section)
 @mixin grid-set-template($rows, $cols) {
-    grid-template-rows: repeat($rows, 1fr);
-    grid-template-columns: repeat($cols, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+  grid-template-columns: repeat($cols, 1fr);
 }
 
 // Swiper @media settings
 @mixin swiper-set-size($width, $height, $arrow-offset) {
-    .swiper {
-        width: $width;
-        height: $height;
-    }
-    
-    .swiper-button-prev {
-        left: calc(50% - $arrow-offset);
-    }
-    
-    .swiper-button-next {
-        right: calc(50% - $arrow-offset);
-    }
+  .swiper {
+    width: $width;
+    height: $height;
+  }
+  
+  .swiper-button-prev {
+    left: calc(50% - $arrow-offset);
+  }
+  
+  .swiper-button-next {
+    right: calc(50% - $arrow-offset);
+  }
 
-    @content;
+  @content;
 }
 
 @mixin swiper-set-pagination-size($diameter, $margin-inline) {
-    .swiper-pagination-bullet,
-    .swiper-pagination-bullet-active {
-        width: $diameter;
-        height: $diameter;
-    }
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    width: $diameter;
+    height: $diameter;
+  }
 
-    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, 
-    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-            margin: 0 $margin-inline;
-    }
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, 
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 $margin-inline;
+  }
 }

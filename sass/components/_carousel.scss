@@ -4,74 +4,74 @@
 Swiper
 ================= */
 .swiper {
-    width: 90%;
-    height: 468px;
+  width: 90%;
+  height: 468px;
 }
 
 .swiper-slide {
-    cursor: grab;
+  cursor: grab;
 }
 
 .swiper-button-prev {
-    color: $clr-neutral-600;
-    top: 205px;
-    left: calc(50% - 156px);
+  color: $clr-neutral-600;
+  top: 205px;
+  left: calc(50% - 156px);
 }
 
 .swiper-button-next {
-    color: $clr-neutral-600;
-    top: 205px;
-    right: calc(50% - 156px);
+  color: $clr-neutral-600;
+  top: 205px;
+  right: calc(50% - 156px);
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .swiper-pagination {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
-    background-color: $clr-primary;
+  background-color: $clr-primary;
 }
 
 @include swiper-set-pagination-size(12px, 2px);
 
 @media (min-width: 360px) {
-    // Set swiper width, height and arrow X-offset from the center
-    @include swiper-set-size(270px, 468px, 166px);
+  // Set swiper width, height and arrow X-offset from the center
+  @include swiper-set-size(270px, 468px, 166px);
 }
 
 @media (min-width: 440px) {
-    @include swiper-set-size(270px, 468px, 200px);
+  @include swiper-set-size(270px, 468px, 200px);
 
-    // Increase the prev and next arrow size
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        font-size: 50px;
-    }
+  // Increase the prev and next arrow size
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 50px;
+  }
 }
 
 @include media(sm) {
-    @include swiper-set-size(300px, 470px, 200px);
+  @include swiper-set-size(300px, 470px, 200px);
 }
 
 @include media(lg) {
-    @include swiper-set-size(570px, 486px, 380px);
-    @include swiper-set-pagination-size(15px, 3px);
+  @include swiper-set-size(570px, 486px, 380px);
+  @include swiper-set-pagination-size(15px, 3px);
 }
 
 @include media(xl) {
-    @include swiper-set-size(900px, 496px, 500px);
+  @include swiper-set-size(900px, 496px, 500px);
 }
 
 @include media(xxl) {
-    @include swiper-set-size(900px, 496px, 500px);
+  @include swiper-set-size(900px, 496px, 500px);
 }
 
 @include media(xxxl) {
-    @include swiper-set-size(1200px, 500px, 680px);
+  @include swiper-set-size(1200px, 500px, 680px);
 }

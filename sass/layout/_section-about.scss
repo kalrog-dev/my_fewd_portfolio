@@ -1,221 +1,221 @@
 @use '../abstracts' as *;
 
 .about-container {
-    flex-direction: column;
-    align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 // Technical skills
 .about-tech-list {   
-    display: grid;
-    @include grid-set-template(6, 2);
-    grid-auto-flow: column;
-    padding: 0;
-    margin-bottom: 0;
-    list-style: none;
+  display: grid;
+  @include grid-set-template(6, 2);
+  grid-auto-flow: column;
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
 
-    img {
-        width: 20px;
-        margin-right: calc($spacer * 0.85);
-    }
+  img {
+    width: 20px;
+    margin-right: calc($spacer * 0.85);
+  }
 }
 
 .about-tech-item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: $spacer-sm;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: $spacer-sm;
 }
 
 // Certificates
 .certificate {
-    position: relative;
-    margin-block: calc($spacer * 0.75);
-    padding: $spacer-sm;
-    padding-left: 1.5em;
-    border-radius: 5px;
+  position: relative;
+  margin-block: calc($spacer * 0.75);
+  padding: $spacer-sm;
+  padding-left: 1.5em;
+  border-radius: 5px;
 
-    &.unfinished {
-        @extend %unfinished;
-    }
+  &.unfinished {
+    @extend %unfinished;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+  }
+
+  &:nth-of-type(odd) {
+    background-color: $clr-neutral-200;
 
     &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 10px;
-        height: 100%;
-        border-radius: 5px 0 0 5px;
+      background-color: rgba($clr-neutral-800, 0.25);
     }
+  }
 
-    &:nth-of-type(odd) {
-        background-color: $clr-neutral-200;
+  &:nth-of-type(even) {
+    background-color: rgba($clr-primary, 0.1);
 
-        &::before {
-            background-color: rgba($clr-neutral-800, 0.25);
-        }
+    &::before {
+      background-color: rgba($clr-primary, 0.25);
     }
+  }
 
-    &:nth-of-type(even) {
-        background-color: rgba($clr-primary, 0.1);
+  &:first-of-type {
+    margin-top: calc($spacer * 2.25);
+  }
 
-        &::before {
-            background-color: rgba($clr-primary, 0.25);
-        }
-    }
-
-    &:first-of-type {
-        margin-top: calc($spacer * 2.25);
-    }
-
-    &:last-of-type {
-        margin-bottom: $spacer-md;
-    }
+  &:last-of-type {
+    margin-bottom: $spacer-md;
+  }
 }
 
 .certificate-container {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .certificate-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    .certificate-by {
-        margin: 0;
-    }
+  .certificate-by {
+    margin: 0;
+  }
 }
 
 .certificate-link {
-    display: flex;
-    position: relative;
-    top: -3px;
+  display: flex;
+  position: relative;
+  top: -3px;
 }
 
 .certificate-link-icon {
-    transform: scale(0.9);
-    transition: transform 0.2s;
+  transform: scale(0.9);
+  transition: transform 0.2s;
+
+  path {
+    transition-property: color, stroke;
+    transition-duration: 0.2s;
+  }
+
+  &:hover {
+    transform: scale(1.1);
 
     path {
-        transition-property: color, stroke;
-        transition-duration: 0.2s;
+      color: $clr-primary;
+      stroke: $clr-primary;
     }
-
-    &:hover {
-        transform: scale(1.1);
-
-        path {
-            color: $clr-primary;
-            stroke: $clr-primary;
-        }
-    }
+  }
 }
 
 .certificate-preview {
-    display: none;
+  display: none;
 }
 
 /* =================
 Media queries
 ================= */
 @include media(sm) {
-    .about-tech-list {   
-        // Tech icon list - set grid rows and cols
-        @include grid-set-template(4, 3);
-    }
+  .about-tech-list {   
+    // Tech icon list - set grid rows and cols
+    @include grid-set-template(4, 3);
+  }
 }
 
 @include media(md) {
-    // Increase tech icon sizes
-    .about-tech-list {   
-        img {
-            width: 25px;
-        }
+  // Increase tech icon sizes
+  .about-tech-list {   
+    img {
+      width: 25px;
     }
+  }
 
-    // External link icon offset
-    .certificate-link {
-        top: -1px;
-    }
+  // External link icon offset
+  .certificate-link {
+    top: -1px;
+  }
 }
 
 @include media(lg) {
-    // Section 2-column layout
-    .about-container {
-        flex-direction: row;
-        gap: $spacer-xl;
+  // Section 2-column layout
+  .about-container {
+    flex-direction: row;
+    gap: $spacer-xl;
 
-        .col-one {
-            flex: 4;
-        }
-    
-        .col-two {
-            flex: 3;
-
-            h3:first-of-type {
-                margin-top: 0;
-            }
-        }
+    .col-one {
+      flex: 4;
     }
+  
+    .col-two {
+      flex: 3;
+
+      h3:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 @include media(xl) {
-    // Increase tech icon sizes
-    .about-tech-list {   
-        img {
-            width: 30px;
-        }
+  // Increase tech icon sizes
+  .about-tech-list {   
+    img {
+      width: 30px;
     }
+  }
 
-    .certificate::before {
-        width: 11px;
-    }
+  .certificate::before {
+    width: 11px;
+  }
 
-    // External link icon offset
-    .certificate-link {
-        top: 0px;
-    }
+  // External link icon offset
+  .certificate-link {
+    top: 0px;
+  }
 }
 
 @include media(xxl) {
-    .certificate::before {
-        width: 12px;
-    }
+  .certificate::before {
+    width: 12px;
+  }
 
-    // External link icon offset
-    .certificate-link {
-        top: 2px;
-    }
+  // External link icon offset
+  .certificate-link {
+    top: 2px;
+  }
 }
 
 @include media(xxxl) {
-    .about-container {
-        gap: 6.5em;
-    }
+  .about-container {
+    gap: 6.5em;
+  }
 
-    .certificate-preview {
-        display: block;
-        position: absolute;
-        top: -25px;
-        right: -180px;
-        width: 150px;
-        opacity: 0;
-        transform: scale(0);
-        transform-origin: left;
-        transition: 
-                transform 0.45s ease-in 0.4s,
-                opacity 0.45s ease-in 0.4s;
-        border: 1px solid #e1e1e1;
-        box-shadow: $shadow-light;
-    }
+  .certificate-preview {
+    display: block;
+    position: absolute;
+    top: -25px;
+    right: -180px;
+    width: 150px;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left;
+    transition: 
+        transform 0.45s ease-in 0.4s,
+        opacity 0.45s ease-in 0.4s;
+    border: 1px solid #e1e1e1;
+    box-shadow: $shadow-light;
+  }
 
-    .certificate-link:hover + .certificate-preview {
-            transform: scale(1);
-            opacity: 1;
-            transition: 
-                transform 0.45s ease-in 0.1s,
-                opacity 0.45s ease-in 0.1s;
-    }
+  .certificate-link:hover + .certificate-preview {
+      transform: scale(1);
+      opacity: 1;
+      transition: 
+        transform 0.45s ease-in 0.1s,
+        opacity 0.45s ease-in 0.1s;
+  }
 }
