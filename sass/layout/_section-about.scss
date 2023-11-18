@@ -8,7 +8,7 @@
 // Technical skills
 .about-tech-list {   
   display: grid;
-  @include grid-set-template(6, 2);
+  @include grid-set-template(5, 2);
   grid-auto-flow: column;
   padding: 0;
   margin-bottom: 0;
@@ -123,7 +123,7 @@ Media queries
 @include media(sm) {
   .about-tech-list {   
     // Tech icon list - set grid rows and cols
-    @include grid-set-template(4, 3);
+    @include grid-set-template(3, 3);
   }
 }
 
