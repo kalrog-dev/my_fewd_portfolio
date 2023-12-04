@@ -30,7 +30,7 @@ header {
   }
 
   .nav-item {
-    text-align: center;  
+    text-align: center;
 
     &:hover {
       background-color: rgba($clr-neutral-300, 0.40);
@@ -104,17 +104,17 @@ header {
       border-radius: 5px;
 
       &:hover {
-        background-color: $clr-neutral-200;
-
-        .nav-link {
-          color: $clr-primary;
-        }
+        background-color: inherit;
       }
     }
 
     .nav-link {
-      padding: $spacer-xs;
-      margin-inline: $spacer-sm;
+      padding: $spacer-xs calc($spacer * 0.75);
+
+      &:hover {
+        background-color: $clr-neutral-200;
+        color: $clr-primary;
+      }
     }
   }
 }
